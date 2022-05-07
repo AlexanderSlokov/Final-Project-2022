@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System;
-using Final_Project_2022.Login_Management;
+using Final_Project_2022;
 
 namespace Final_Project_2022
 {
@@ -89,11 +89,6 @@ namespace Final_Project_2022
             }
         }
 
-        private void createAccLabel_Click(object sender, EventArgs e)
-        {
-            RegisterForm registerForm = new RegisterForm();
-            registerForm.Show(this);
-            this.Hide();
-        }
+       
     }   
 }

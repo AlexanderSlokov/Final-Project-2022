@@ -53,12 +53,6 @@
     <Compile Include="Login Management\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login Management\RegisterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login Management\RegisterForm.Designer.cs">
-      <DependentUpon>RegisterForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,9 +63,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login Management\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login Management\RegisterForm.resx">
-      <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.createAccLabel = new System.Windows.Forms.Label();
             this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,17 +53,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
-            // 
-            // createAccLabel
-            // 
-            this.createAccLabel.AutoSize = true;
-            this.createAccLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.createAccLabel.ForeColor = System.Drawing.Color.LightCoral;
-            this.createAccLabel.Location = new System.Drawing.Point(18, 401);
-            this.createAccLabel.Name = "createAccLabel";
-            this.createAccLabel.Size = new System.Drawing.Size(212, 25);
-            this.createAccLabel.TabIndex = 20;
-            this.createAccLabel.Text = "Do you have an account?";
             // 
             // checkBoxShowPassword
             // 
@@ -137,7 +125,7 @@
             this.ForgotPasswordLabel.AutoSize = true;
             this.ForgotPasswordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.ForgotPasswordLabel.ForeColor = System.Drawing.Color.LightCoral;
-            this.ForgotPasswordLabel.Location = new System.Drawing.Point(18, 426);
+            this.ForgotPasswordLabel.Location = new System.Drawing.Point(20, 401);
             this.ForgotPasswordLabel.Name = "ForgotPasswordLabel";
             this.ForgotPasswordLabel.Size = new System.Drawing.Size(147, 25);
             this.ForgotPasswordLabel.TabIndex = 21;
@@ -186,12 +174,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(331, 464);
+            this.ClientSize = new System.Drawing.Size(331, 435);
             this.Controls.Add(this.radioButtonEmployees);
             this.Controls.Add(this.radioButtonManager);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ForgotPasswordLabel);
-            this.Controls.Add(this.createAccLabel);
             this.Controls.Add(this.checkBoxShowPassword);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.label3);
@@ -210,7 +197,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label createAccLabel;
         private System.Windows.Forms.CheckBox checkBoxShowPassword;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label label3;
