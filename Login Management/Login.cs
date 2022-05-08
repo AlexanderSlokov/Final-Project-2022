@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System;
 using Final_Project_2022;
+using Final_Project_2022.Classes;
 
 namespace Final_Project_2022
 {
@@ -27,53 +28,28 @@ namespace Final_Project_2022
             //create table to check validity of username and password
             DataTable table = new DataTable();
 
-            if (radioButtonManager.Checked)
-            {                               
-                SqlCommand command = new SqlCommand("SELECT * FROM LoginAdminInfo WHERE UserName = @User AND Password = @Pass", db.GetConnection);
+                                
+                SqlCommand command = new SqlCommand("SELECT * FROM HumanResourse WHERE UserName = @User AND Password = @Pass", db.GetConnection);
+                
                 command.Parameters.Add("@User", SqlDbType.NVarChar).Value = textBox_Username.Text;
                 command.Parameters.Add("@Pass", SqlDbType.NVarChar).Value = textBox_Password.Text;
+                
 
                 adapter.SelectCommand = command;
                 adapter.Fill(table);
-
+            
                 if ((table.Rows.Count > 0))
                 {
                     this.DialogResult = DialogResult.OK;
                     MessageBox.Show("Welcome, and have a great day!");
-                    //active main form
-                    Main_Form dashBoard = new Main_Form();
-                    dashBoard.Show(this);
+                    CurrentUser.Email = textBox_Username.Text;
+                    //active main form base on position
+                    //Main_Form dashBoard = new Main_Form();
+                    //dashBoard.Show(this);
                     this.Hide();
                 }
-                else
-                {
-                    MessageBox.Show("Invalid Username or Password! Please, check again...", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            if (radioButtonEmployees.Checked)
-            {
-                SqlCommand command = new SqlCommand("SELECT * FROM LoginEmployeesInfo WHERE UserName = @User AND Password = @Pass", db.GetConnection);
-                command.Parameters.Add("@User", SqlDbType.NVarChar).Value = textBox_Username.Text;
-                command.Parameters.Add("@Pass", SqlDbType.NVarChar).Value = textBox_Password.Text;
-
-                adapter.SelectCommand = command;
-                adapter.Fill(table);
-
-                if ((table.Rows.Count > 0))
-                {
-                    this.DialogResult = DialogResult.OK;
-                    MessageBox.Show("Welcome, and have a great day!");
-                    //active main form
-                    Main_Form dashBoard = new Main_Form();
-                    dashBoard.Show(this);
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Username or Password! Please, check again...", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+               
+           
         }
 
 
@@ -89,6 +65,9 @@ namespace Final_Project_2022
             }
         }
 
-       
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }   
 }

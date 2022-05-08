@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Final_Project_2022
+namespace Final_Project_2022.MainForms
 {
-    public partial class Main_Form : Form
+    public partial class MainFormManager : Form
     {
-        public Main_Form()
+        public MainFormManager()
         {
             InitializeComponent();
         }
+
+       
     }
 }
