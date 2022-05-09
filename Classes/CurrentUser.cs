@@ -33,13 +33,12 @@ namespace Final_Project_2022.Classes
         public static string UserName { get => userName; set => userName = value; }
         public static string Name { get => name; set => name = value; }
         public static string Gender { get => gender; set => gender = value; }
-        private static string Bdate { get => bdate; set => bdate = value; } 
-
+        public static string Bdate { get => bdate; set => bdate = value; } 
         public static string Email { get => email; set => email = value; }
         public static string Phone { get => phone; set => phone = value; }
         public static string Address { get => address; set => address = value; }
         public static string Pos { get => pos; set => pos = value; }       
-        private static string BasicSalary { get => basicSalary; set => basicSalary = value; }   
+        public static string BasicSalary { get => basicSalary; set => basicSalary = value; }   
         public static PictureBox Image { get => image; set => image = value; }
 
 

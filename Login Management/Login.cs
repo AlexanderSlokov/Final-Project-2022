@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System;
 using Final_Project_2022;
 using Final_Project_2022.Classes;
+using Final_Project_2022.MainForms;
 
 namespace Final_Project_2022
 {
@@ -13,7 +14,7 @@ namespace Final_Project_2022
         {
             InitializeComponent();
         }
-
+        EMPLOYEES Employ = new EMPLOYEES();
         private void ForgotPasswordLabel_Click(object sender, EventArgs e)
         {
 
@@ -37,19 +38,31 @@ namespace Final_Project_2022
 
                 adapter.SelectCommand = command;
                 adapter.Fill(table);
-            
-                if ((table.Rows.Count > 0))
-                {
+
+            if ((table.Rows.Count > 0))
+            {
                     this.DialogResult = DialogResult.OK;
                     MessageBox.Show("Welcome, and have a great day!");
-                    CurrentUser.Email = textBox_Username.Text;
-                    //active main form base on position
-                    //Main_Form dashBoard = new Main_Form();
-                    //dashBoard.Show(this);
+                    Employ.getDataOnUserName();
+                //active main form base on position
+                if (CurrentUser.Pos == "Manager")
+                {
+                    MainFormManager dashBoard = new MainFormManager();
+                    dashBoard.Show(this);
                     this.Hide();
                 }
-               
-           
+                else if (CurrentUser.Pos == "Employee")
+                {
+                    MainFormEmployee dashBoardEmployee = new MainFormEmployee();
+                    dashBoardEmployee.Show(this);
+                    this.Hide();
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username or Password! Please, check again...", "Login Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -67,7 +80,9 @@ namespace Final_Project_2022
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            textBox_Username.Select();
+            textBox_Username.Text = "Cielta";
+            textBox_Password.Text = "123";
         }
     }   
 }

@@ -48,11 +48,18 @@
   <ItemGroup>
     <Compile Include="Classes\CurrentUser.cs" />
     <Compile Include="Classes\DatabaseOperating.cs" />
+    <Compile Include="Classes\EMPLOYEES.cs" />
     <Compile Include="Login Management\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login Management\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\MainFormEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\MainFormEmployee.Designer.cs">
+      <DependentUpon>MainFormEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForms\MainFormManager.cs">
       <SubType>Form</SubType>
