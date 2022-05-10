@@ -56,5 +56,19 @@ namespace Final_Project_2022.Classes
 
 
         }
+
+        public DataTable getEmployee(SqlCommand command)
+        {
+            command.Connection = dsop.GetConnection;
+            dsop.openConnection();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+            DataSet dataSet = new DataSet();
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            sqlDataAdapter.Fill(dataSet, "HumanResourse");
+            dataTable = dataSet.Tables["HumanResourse"];
+            dsop.closeConnection();
+            return dataTable;
+
+        }
     }
 }

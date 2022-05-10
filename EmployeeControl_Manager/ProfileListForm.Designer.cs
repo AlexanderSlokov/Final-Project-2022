@@ -41,13 +41,14 @@
             this.ButtonToEXcelFileList = new System.Windows.Forms.Button();
             this.buttonCheckList = new System.Windows.Forms.Button();
             this.buttonRefreshList = new System.Windows.Forms.Button();
+            this.radioButtonYes = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployeeList)).BeginInit();
             this.SuspendLayout();
             // 
             // radioButtonFemaleList
             // 
             this.radioButtonFemaleList.AutoSize = true;
-            this.radioButtonFemaleList.Location = new System.Drawing.Point(800, 72);
+            this.radioButtonFemaleList.Location = new System.Drawing.Point(802, 56);
             this.radioButtonFemaleList.Name = "radioButtonFemaleList";
             this.radioButtonFemaleList.Size = new System.Drawing.Size(74, 20);
             this.radioButtonFemaleList.TabIndex = 19;
@@ -58,7 +59,7 @@
             // radioButtonAllGenderList
             // 
             this.radioButtonAllGenderList.AutoSize = true;
-            this.radioButtonAllGenderList.Location = new System.Drawing.Point(492, 72);
+            this.radioButtonAllGenderList.Location = new System.Drawing.Point(511, 56);
             this.radioButtonAllGenderList.Name = "radioButtonAllGenderList";
             this.radioButtonAllGenderList.Size = new System.Drawing.Size(91, 20);
             this.radioButtonAllGenderList.TabIndex = 18;
@@ -69,7 +70,7 @@
             // radioButtonMaleList
             // 
             this.radioButtonMaleList.AutoSize = true;
-            this.radioButtonMaleList.Location = new System.Drawing.Point(660, 72);
+            this.radioButtonMaleList.Location = new System.Drawing.Point(662, 56);
             this.radioButtonMaleList.Name = "radioButtonMaleList";
             this.radioButtonMaleList.Size = new System.Drawing.Size(58, 20);
             this.radioButtonMaleList.TabIndex = 17;
@@ -80,16 +81,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(168, 74);
+            this.label4.Location = new System.Drawing.Point(170, 58);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(189, 16);
+            this.label4.Size = new System.Drawing.Size(143, 16);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Picking up students by gender:";
+            this.label4.Text = "Picking up students by:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(660, 26);
+            this.label3.Location = new System.Drawing.Point(663, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(27, 16);
             this.label3.TabIndex = 15;
@@ -98,7 +99,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(168, 26);
+            this.label1.Location = new System.Drawing.Point(170, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 16);
             this.label1.TabIndex = 14;
@@ -107,7 +108,7 @@
             // dateTimePickerStartDate
             // 
             this.dateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerStartDate.Location = new System.Drawing.Point(462, 21);
+            this.dateTimePickerStartDate.Location = new System.Drawing.Point(465, 18);
             this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
             this.dateTimePickerStartDate.Size = new System.Drawing.Size(183, 22);
             this.dateTimePickerStartDate.TabIndex = 13;
@@ -115,7 +116,7 @@
             // dateTimePickerEndDate
             // 
             this.dateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerEndDate.Location = new System.Drawing.Point(693, 21);
+            this.dateTimePickerEndDate.Location = new System.Drawing.Point(696, 18);
             this.dateTimePickerEndDate.Name = "dateTimePickerEndDate";
             this.dateTimePickerEndDate.Size = new System.Drawing.Size(181, 22);
             this.dateTimePickerEndDate.TabIndex = 12;
@@ -126,7 +127,7 @@
             this.dataGridViewEmployeeList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(144)))), ((int)(((byte)(244)))));
             this.dataGridViewEmployeeList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmployeeList.Location = new System.Drawing.Point(171, 119);
+            this.dataGridViewEmployeeList.Location = new System.Drawing.Point(173, 103);
             this.dataGridViewEmployeeList.Name = "dataGridViewEmployeeList";
             this.dataGridViewEmployeeList.RowHeadersWidth = 51;
             this.dataGridViewEmployeeList.RowTemplate.Height = 100;
@@ -138,45 +139,60 @@
             this.ButtonToEXcelFileList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonToEXcelFileList.BackgroundImage")));
             this.ButtonToEXcelFileList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ButtonToEXcelFileList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonToEXcelFileList.Location = new System.Drawing.Point(8, 393);
+            this.ButtonToEXcelFileList.Location = new System.Drawing.Point(10, 333);
             this.ButtonToEXcelFileList.Name = "ButtonToEXcelFileList";
             this.ButtonToEXcelFileList.Size = new System.Drawing.Size(157, 77);
             this.ButtonToEXcelFileList.TabIndex = 22;
             this.ButtonToEXcelFileList.Text = "To EXcel File";
             this.ButtonToEXcelFileList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ButtonToEXcelFileList.UseVisualStyleBackColor = true;
+            this.ButtonToEXcelFileList.Click += new System.EventHandler(this.ButtonToEXcelFileList_Click);
             // 
             // buttonCheckList
             // 
             this.buttonCheckList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCheckList.BackgroundImage")));
             this.buttonCheckList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonCheckList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCheckList.Location = new System.Drawing.Point(8, 297);
+            this.buttonCheckList.Location = new System.Drawing.Point(10, 237);
             this.buttonCheckList.Name = "buttonCheckList";
             this.buttonCheckList.Size = new System.Drawing.Size(157, 76);
             this.buttonCheckList.TabIndex = 21;
             this.buttonCheckList.Text = "Check";
             this.buttonCheckList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonCheckList.UseVisualStyleBackColor = true;
+            this.buttonCheckList.Click += new System.EventHandler(this.buttonCheckList_Click);
             // 
             // buttonRefreshList
             // 
             this.buttonRefreshList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRefreshList.BackgroundImage")));
             this.buttonRefreshList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonRefreshList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRefreshList.Location = new System.Drawing.Point(8, 203);
+            this.buttonRefreshList.Location = new System.Drawing.Point(10, 143);
             this.buttonRefreshList.Name = "buttonRefreshList";
             this.buttonRefreshList.Size = new System.Drawing.Size(157, 74);
             this.buttonRefreshList.TabIndex = 20;
             this.buttonRefreshList.Text = "Refresh";
             this.buttonRefreshList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonRefreshList.UseVisualStyleBackColor = true;
+            this.buttonRefreshList.Click += new System.EventHandler(this.buttonRefreshList_Click);
+            // 
+            // radioButtonYes
+            // 
+            this.radioButtonYes.AutoSize = true;
+            this.radioButtonYes.Location = new System.Drawing.Point(375, 56);
+            this.radioButtonYes.Name = "radioButtonYes";
+            this.radioButtonYes.Size = new System.Drawing.Size(85, 20);
+            this.radioButtonYes.TabIndex = 23;
+            this.radioButtonYes.TabStop = true;
+            this.radioButtonYes.Text = "Use Date";
+            this.radioButtonYes.UseVisualStyleBackColor = true;
             // 
             // ProfileListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 481);
+            this.ClientSize = new System.Drawing.Size(888, 467);
+            this.Controls.Add(this.radioButtonYes);
             this.Controls.Add(this.ButtonToEXcelFileList);
             this.Controls.Add(this.buttonCheckList);
             this.Controls.Add(this.buttonRefreshList);
@@ -212,5 +228,6 @@
         private System.Windows.Forms.Button ButtonToEXcelFileList;
         private System.Windows.Forms.Button buttonCheckList;
         private System.Windows.Forms.Button buttonRefreshList;
+        private System.Windows.Forms.RadioButton radioButtonYes;
     }
 }
