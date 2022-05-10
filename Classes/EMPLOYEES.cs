@@ -41,9 +41,9 @@ namespace Final_Project_2022.Classes
                     CurrentUser.Pos = reader["Position"].ToString();
                     CurrentUser.BasicSalary = reader["BasicSalary"].ToString();
 
-                    MemoryStream stream = new MemoryStream((byte[])reader["picture"]);
+                    MemoryStream stream = new MemoryStream((Byte)reader["Picture"]);
                     Image RetImage = Image.FromStream(stream);
-                    CurrentUser.Image.Image = RetImage;
+                    CurrentUser.Image = RetImage;
                 }
                 reader.Close();
                 dsop.closeConnection();

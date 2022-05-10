@@ -25,7 +25,7 @@ namespace Final_Project_2022.Classes
         private static string pos;
         private static string basicSalary;
 
-        private static PictureBox image;
+        private static Image image;
 
         public static int Id { get => id; set => id = value; }
         public static string Manager_id { get => manager_id; set => manager_id = value; }
@@ -39,7 +39,7 @@ namespace Final_Project_2022.Classes
         public static string Address { get => address; set => address = value; }
         public static string Pos { get => pos; set => pos = value; }       
         public static string BasicSalary { get => basicSalary; set => basicSalary = value; }   
-        public static PictureBox Image { get => image; set => image = value; }
+        public static Image Image { get => image; set => image = value; }
 
 
         

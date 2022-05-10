@@ -51,6 +51,7 @@
             this.EditProfilebutton = new System.Windows.Forms.Button();
             this.LogOutbutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.ProfileListbutton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -71,12 +72,13 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ProfileListbutton);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.EditEmployeeProfilebutton);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(12, 202);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 153);
+            this.panel1.Size = new System.Drawing.Size(200, 213);
             this.panel1.TabIndex = 1;
             // 
             // button1
@@ -102,9 +104,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(26, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 16);
+            this.label3.Size = new System.Drawing.Size(151, 16);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Emloyees Management";
+            this.label3.Text = "Emloyees Profile Center";
             // 
             // panel2
             // 
@@ -113,7 +115,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(218, 202);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 153);
+            this.panel2.Size = new System.Drawing.Size(200, 213);
             this.panel2.TabIndex = 2;
             // 
             // button4
@@ -150,7 +152,7 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(424, 202);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 153);
+            this.panel3.Size = new System.Drawing.Size(200, 213);
             this.panel3.TabIndex = 3;
             // 
             // button5
@@ -187,7 +189,7 @@
             this.panel4.Controls.Add(this.label5);
             this.panel4.Location = new System.Drawing.Point(630, 202);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(212, 153);
+            this.panel4.Size = new System.Drawing.Size(212, 213);
             this.panel4.TabIndex = 4;
             // 
             // button7
@@ -273,11 +275,21 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Current Account :";
             // 
+            // ProfileListbutton
+            // 
+            this.ProfileListbutton.Location = new System.Drawing.Point(3, 147);
+            this.ProfileListbutton.Name = "ProfileListbutton";
+            this.ProfileListbutton.Size = new System.Drawing.Size(194, 48);
+            this.ProfileListbutton.TabIndex = 6;
+            this.ProfileListbutton.Text = "Profile List";
+            this.ProfileListbutton.UseVisualStyleBackColor = true;
+            this.ProfileListbutton.Click += new System.EventHandler(this.ProfileListbutton_Click);
+            // 
             // MainFormManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 384);
+            this.ClientSize = new System.Drawing.Size(858, 447);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -327,5 +339,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label CurrentAccountLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button ProfileListbutton;
     }
 }

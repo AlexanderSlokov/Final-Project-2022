@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Final_Project_2022.EmployeeControl_Manager;
 
 namespace Final_Project_2022.MainForms
 {
@@ -17,6 +18,10 @@ namespace Final_Project_2022.MainForms
             InitializeComponent();
         }
 
-       
+        private void ProfileListbutton_Click(object sender, EventArgs e)
+        {
+            ProfileListForm profileList = new ProfileListForm();
+            profileList.ShowDialog();   
+        }
     }
 }
