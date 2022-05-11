@@ -57,10 +57,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AccountDB.cs" />
     <Compile Include="Classes\CurrentUser.cs" />
     <Compile Include="Classes\DatabaseOperating.cs" />
+    <Compile Include="Classes\DataValidate.cs" />
+    <Compile Include="Classes\EmployeeDB.cs" />
     <Compile Include="Classes\EmployeeModel.cs" />
     <Compile Include="Classes\EMPLOYEES.cs" />
+    <Compile Include="EmployeeControl_Manager\Employee Manager Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeControl_Manager\Employee Manager Form.Designer.cs">
+      <DependentUpon>Employee Manager Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeControl_Manager\ProfileListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EmployeeControl_Manager\Employee Manager Form.resx">
+      <DependentUpon>Employee Manager Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeControl_Manager\ProfileListForm.resx">
       <DependentUpon>ProfileListForm.cs</DependentUpon>
     </EmbeddedResource>

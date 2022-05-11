@@ -29,35 +29,33 @@ namespace Final_Project_2022.EmployeeControl_Manager
             try
             {
                 databaseOperating.openConnection();
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT ID ,ManagerID, Name, Gender, Bdate, Email, Phone, Address,Position, BasicSalary, Picture FROM HumanResourse", databaseOperating.GetConnection);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT id ,name, gender, BirthDate, email, phoneNum, position, salary_per_hour, image FROM employee", databaseOperating.GetConnection);
                 DataSet dataSet = new DataSet();
 
                 System.Data.DataTable dataTable = new System.Data.DataTable();
-                sqlDataAdapter.Fill(dataSet, "HumanResourse");
+                sqlDataAdapter.Fill(dataSet, "employee");
 
-                dataTable = dataSet.Tables["HumanResourse"];
+                dataTable = dataSet.Tables["employee"];
                 dataGridViewEmployeeList.DataSource = dataTable;
-                dataGridViewEmployeeList.Columns[0].HeaderText = "Employee ID";
-                dataGridViewEmployeeList.Columns[1].HeaderText = "Employee Manager ID";
-                dataGridViewEmployeeList.Columns[2].HeaderText = "Employee Name";
-                dataGridViewEmployeeList.Columns[3].HeaderText = "Employee Gender";
-                dataGridViewEmployeeList.Columns[4].HeaderText = "Employee Birthday";
-                dataGridViewEmployeeList.Columns[5].HeaderText = "Employee Email";
-                dataGridViewEmployeeList.Columns[6].HeaderText = "Employee Phone Number";
-                dataGridViewEmployeeList.Columns[7].HeaderText = "Employee Address";
-                dataGridViewEmployeeList.Columns[8].HeaderText = "Employee Position";
-                dataGridViewEmployeeList.Columns[9].HeaderText = "Employee BasicSalary";
-                dataGridViewEmployeeList.Columns[10].HeaderText = "Employee Picture";
+                dataGridViewEmployeeList.Columns[0].HeaderText = "Employee ID";              
+                dataGridViewEmployeeList.Columns[1].HeaderText = "Employee Name";
+                dataGridViewEmployeeList.Columns[2].HeaderText = "Employee Gender";
+                dataGridViewEmployeeList.Columns[3].HeaderText = "Employee Birthday";
+                dataGridViewEmployeeList.Columns[4].HeaderText = "Employee Email";
+                dataGridViewEmployeeList.Columns[5].HeaderText = "Employee Phone Number";                
+                dataGridViewEmployeeList.Columns[6].HeaderText = "Employee Position";
+                dataGridViewEmployeeList.Columns[7].HeaderText = "Employee Salary Per Hour";
+                dataGridViewEmployeeList.Columns[8].HeaderText = "Employee Picture";
 
 
 
 
                 DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-                picCol = (DataGridViewImageColumn)dataGridViewEmployeeList.Columns[10];
+                picCol = (DataGridViewImageColumn)dataGridViewEmployeeList.Columns[8];
 
                 try
                 {
-                    DataGridViewImageColumn imgCol = (DataGridViewImageColumn)dataGridViewEmployeeList.Columns["Picture"];
+                    DataGridViewImageColumn imgCol = (DataGridViewImageColumn)dataGridViewEmployeeList.Columns["image"];
                     imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
                 }
                 catch (Exception ex)
@@ -84,13 +82,13 @@ namespace Final_Project_2022.EmployeeControl_Manager
         {
             DatabaseOperating databaseOperating = new DatabaseOperating();
             databaseOperating.openConnection();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT ID ,ManagerID, Name, Gender, Bdate, Email, Phone, Address,Position, BasicSalary, Picture FROM HumanResourse WHERE Gender = 'Male'", databaseOperating.GetConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT id ,name, gender, BirthDate, email, phoneNum, position, salary_per_hour, image FROM employee WHERE gender = 'Male'", databaseOperating.GetConnection);
             DataSet dataSet = new DataSet();
 
             System.Data.DataTable dataTable = new System.Data.DataTable();
-            sqlDataAdapter.Fill(dataSet, "HumanResourse");
+            sqlDataAdapter.Fill(dataSet, "employee");
 
-            dataTable = dataSet.Tables["HumanResourse"];
+            dataTable = dataSet.Tables["employee"];
             dataGridViewEmployeeList.DataSource = dataTable;
 
             databaseOperating.closeConnection();
@@ -100,13 +98,13 @@ namespace Final_Project_2022.EmployeeControl_Manager
         {
             DatabaseOperating databaseOperating = new DatabaseOperating();
             databaseOperating.openConnection();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT ID ,ManagerID, Name, Gender, Bdate, Email, Phone, Address,Position, BasicSalary, Picture FROM HumanResourse WHERE gender = 'Female'", databaseOperating.GetConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT id ,name, gender, BirthDate, email, phoneNum, position, salary_per_hour, image FROM employee WHERE gender = 'Female'", databaseOperating.GetConnection);
             DataSet dataSet = new DataSet();
 
             System.Data.DataTable dataTable = new System.Data.DataTable();
-            sqlDataAdapter.Fill(dataSet, "HumanResourse");
+            sqlDataAdapter.Fill(dataSet, "employee");
 
-            dataTable = dataSet.Tables["HumanResourse"];
+            dataTable = dataSet.Tables["employee"];
             dataGridViewEmployeeList.DataSource = dataTable;
 
             databaseOperating.closeConnection();
@@ -118,13 +116,13 @@ namespace Final_Project_2022.EmployeeControl_Manager
             {
                 DatabaseOperating databaseOperating = new DatabaseOperating();
                 databaseOperating.openConnection();
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT ID ,ManagerID, Name, Gender, Bdate, Email, Phone, Address,Position, BasicSalary, Picture FROM HumanResourse", databaseOperating.GetConnection);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT id ,name, gender, BirthDate, email, phoneNum, position, salary_per_hour, image FROM employee", databaseOperating.GetConnection);
                 DataSet dataSet = new DataSet();
 
                 System.Data.DataTable dataTable = new System.Data.DataTable();
-                sqlDataAdapter.Fill(dataSet, "HumanResourse");
+                sqlDataAdapter.Fill(dataSet, "employee");
 
-                dataTable = dataSet.Tables["HumanResourse"];
+                dataTable = dataSet.Tables["employee"];
                 dataGridViewEmployeeList.DataSource = dataTable;
 
                 databaseOperating.closeConnection();
@@ -205,15 +203,15 @@ namespace Final_Project_2022.EmployeeControl_Manager
             {
                 if (radioButtonMaleList.Checked)
                 {
-                    query = "SELECT ID ,ManagerID, Name, Gender, Bdate, Email, Phone, Address,Position, BasicSalary, Picture FROM HumanResourse WHERE Gender = 'Male' AND Bdate BETWEEN'" + startdate + "'AND' " + enddate + "'";
+                    query = "SELECT id ,name, gender, BirthDate, email, phoneNum, position, salary_per_hour, image FROM employee WHERE gender = 'Male' AND BirthDate BETWEEN'" + startdate + "'AND' " + enddate + "'";
                 }
                 else if (radioButtonFemaleList.Checked)
                 {
-                    query = "SELECT ID ,ManagerID, Name, Gender, Bdate, Email, Phone, Address,Position, BasicSalary, Picture FROM HumanResourse WHERE Gender = 'Female' AND Bdate BETWEEN'" + startdate + "'AND' " + enddate + "'";
+                    query = "SELECT id ,name, gender, BirthDate, email, phoneNum, position, salary_per_hour, image FROM employee WHERE gender = 'Female' AND BirthDate BETWEEN'" + startdate + "'AND' " + enddate + "'";
                 }
                 else
                 {
-                    query = "SELECT ID ,ManagerID, Name, Gender, Bdate, Email, Phone, Address,Position, BasicSalary, Picture FROM HumanResourse WHERE Bdate BETWEEN'" + startdate + "'AND' " + enddate + "'";
+                    query = "SELECT id ,name, gender, BirthDate, email, phoneNum, position, salary_per_hour, image FROM employee WHERE BirthDate BETWEEN'" + startdate + "'AND' " + enddate + "'";
                 }
 
                 command = new SqlCommand(query, databaseOperating.GetConnection);

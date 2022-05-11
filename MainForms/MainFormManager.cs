@@ -23,5 +23,11 @@ namespace Final_Project_2022.MainForms
             ProfileListForm profileList = new ProfileListForm();
             profileList.ShowDialog();   
         }
+
+        private void EditEmployeeProfilebutton_Click(object sender, EventArgs e)
+        {
+            Employee_Manager_Form employee_Manager_Form = new Employee_Manager_Form();      
+            employee_Manager_Form.ShowDialog(); 
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace Final_Project_2022.Classes
             try
             {
                 //use SQL command to get all data
-                SqlCommand command = new SqlCommand("SELECT * FROM HumanResourse", dsop.GetConnection);
+                SqlCommand command = new SqlCommand("SELECT * FROM employee", dsop.GetConnection);
                 //command.Parameters.Add("@UserName", SqlDbType.Int).Value = CurrentUser.UserName;
                 dsop.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
@@ -26,22 +26,17 @@ namespace Final_Project_2022.Classes
                 {
                     
                     
-                    CurrentUser.Id =  Convert.ToInt32(reader["ID"]);
-                    CurrentUser.Manager_id = reader["ManagerID"].ToString();
-
-                    CurrentUser.UserName = reader["UserName"].ToString();
-                    CurrentUser.Pass = reader["Password"].ToString();   
-                    
-                    CurrentUser.Name = reader["Name"].ToString();
-                    CurrentUser.Gender = reader["Gender"].ToString();
-                    CurrentUser.Bdate = reader["Bdate"].ToString();
-                    CurrentUser.Email = reader["Email"].ToString();
-                    CurrentUser.Phone = reader["Phone"].ToString();
-                    CurrentUser.Address = reader["Address"].ToString();
-                    CurrentUser.Pos = reader["Position"].ToString();
-                    CurrentUser.BasicSalary = reader["BasicSalary"].ToString();
-
-                    MemoryStream stream = new MemoryStream((Byte)reader["Picture"]);
+                    CurrentUser.Id =  Convert.ToInt32(reader["id"]);                 
+                    CurrentUser.UserName = reader["username"].ToString();
+                    CurrentUser.Pass = reader["password"].ToString();                      
+                    CurrentUser.Name = reader["name"].ToString();
+                    CurrentUser.Gender = reader["gender"].ToString();
+                    CurrentUser.Bdate = reader["birthDate"].ToString();
+                    CurrentUser.Email = reader["email"].ToString();
+                    CurrentUser.Phone = reader["phoneNum"].ToString();                   
+                    CurrentUser.Pos = reader["position"].ToString();
+                    CurrentUser.Salary_per_hour = reader["salary_per_hour"].ToString();
+                    MemoryStream stream = new MemoryStream((Byte)reader["image"]);
                     Image RetImage = Image.FromStream(stream);
                     CurrentUser.Image = RetImage;
                 }
@@ -64,8 +59,8 @@ namespace Final_Project_2022.Classes
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
             DataSet dataSet = new DataSet();
             System.Data.DataTable dataTable = new System.Data.DataTable();
-            sqlDataAdapter.Fill(dataSet, "HumanResourse");
-            dataTable = dataSet.Tables["HumanResourse"];
+            sqlDataAdapter.Fill(dataSet, "employee");
+            dataTable = dataSet.Tables["employee"];
             dsop.closeConnection();
             return dataTable;
 

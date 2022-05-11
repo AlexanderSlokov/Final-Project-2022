@@ -11,7 +11,7 @@ namespace Final_Project_2022.Classes
     public class EmployeeModel
     {
         private int id;
-        private int manager_id;
+        
 
         private string username;
         private string password;
@@ -23,12 +23,11 @@ namespace Final_Project_2022.Classes
         private string phoneNum;
         private string email;
         private Image image;
-        private float basicSalary;
-        private string address;
+        private float salary_per_hour;       
         private int age;
 
         public int Id { get => id; set => id = value; }
-        public int Manager_id { get => manager_id; set => manager_id = value; }
+       
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
         public string Name { get => name; set => name = value; }
@@ -38,8 +37,7 @@ namespace Final_Project_2022.Classes
         public string PhoneNum { get => phoneNum; set => phoneNum = value; }
         public string Email { get => email; set => email = value; }
         public Image Image { get => image; set => image = value; }
-        public float BasicSalary { get => basicSalary; set => basicSalary = value; }
-        public string Address { get => address; set => address = value; }
+        public float Salary_per_hour { get => salary_per_hour; set => salary_per_hour = value; }        
         public int Age { get => age; }
 
         public EmployeeModel()
@@ -58,22 +56,18 @@ namespace Final_Project_2022.Classes
                 this.age--;
         }
 
-        public EmployeeModel(int id, int manager_id, string name, string position, DateTime birthDate, string gender, string phoneNum, string email, Image image, float basic_salary, string username, string password, string address)
+        public EmployeeModel(int id, int manager_id, string name, string position, DateTime birthDate, string gender, string phoneNum, string email, Image image, float salary_per_hour, string username, string password, string address)
         {
-            this.Id = id;
-            this.Manager_id = manager_id;
-
+            this.Id = id;          
             this.Username = username;
             this.Password = password;
-
             this.Name = name;
             this.Gender = gender;            
             this.BirthDate = birthDate;
             this.Email = email;
-            this.PhoneNum = phoneNum;
-            this.Address = address;           
+            this.PhoneNum = phoneNum;                     
             this.Position = position;
-            this.BasicSalary = basic_salary;
+            this.Salary_per_hour = salary_per_hour;
             this.Image = image;
 
             DateTime now = DateTime.Today;

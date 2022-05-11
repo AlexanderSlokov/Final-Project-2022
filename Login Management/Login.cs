@@ -30,7 +30,7 @@ namespace Final_Project_2022
             DataTable table = new DataTable();
 
                                 
-                SqlCommand command = new SqlCommand("SELECT * FROM HumanResourse WHERE UserName = @User AND Password = @Pass", db.GetConnection);
+                SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE username = @User AND password = @Pass", db.GetConnection);
                 
                 command.Parameters.Add("@User", SqlDbType.NVarChar).Value = textBox_Username.Text;
                 command.Parameters.Add("@Pass", SqlDbType.NVarChar).Value = textBox_Password.Text;
@@ -51,7 +51,7 @@ namespace Final_Project_2022
                     dashBoard.Show(this);
                     this.Hide();
                 }
-                else if (CurrentUser.Pos == "Employee")
+                else if (CurrentUser.Pos == "Waitress")
                 {
                     MainFormEmployee dashBoardEmployee = new MainFormEmployee();
                     dashBoardEmployee.Show(this);

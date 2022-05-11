@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ProfileListbutton = new System.Windows.Forms.Button();
             this.EditEmployeeProfilebutton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -51,7 +51,6 @@
             this.EditProfilebutton = new System.Windows.Forms.Button();
             this.LogOutbutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.ProfileListbutton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -73,7 +72,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.ProfileListbutton);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.EditEmployeeProfilebutton);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(12, 202);
@@ -81,23 +79,25 @@
             this.panel1.Size = new System.Drawing.Size(200, 213);
             this.panel1.TabIndex = 1;
             // 
-            // button1
+            // ProfileListbutton
             // 
-            this.button1.Location = new System.Drawing.Point(3, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 48);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Add New Employee Profile";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ProfileListbutton.Location = new System.Drawing.Point(3, 93);
+            this.ProfileListbutton.Name = "ProfileListbutton";
+            this.ProfileListbutton.Size = new System.Drawing.Size(194, 48);
+            this.ProfileListbutton.TabIndex = 6;
+            this.ProfileListbutton.Text = "Profile List";
+            this.ProfileListbutton.UseVisualStyleBackColor = true;
+            this.ProfileListbutton.Click += new System.EventHandler(this.ProfileListbutton_Click);
             // 
             // EditEmployeeProfilebutton
             // 
-            this.EditEmployeeProfilebutton.Location = new System.Drawing.Point(3, 93);
+            this.EditEmployeeProfilebutton.Location = new System.Drawing.Point(3, 39);
             this.EditEmployeeProfilebutton.Name = "EditEmployeeProfilebutton";
             this.EditEmployeeProfilebutton.Size = new System.Drawing.Size(194, 48);
             this.EditEmployeeProfilebutton.TabIndex = 3;
             this.EditEmployeeProfilebutton.Text = "Edit Employee Profile";
             this.EditEmployeeProfilebutton.UseVisualStyleBackColor = true;
+            this.EditEmployeeProfilebutton.Click += new System.EventHandler(this.EditEmployeeProfilebutton_Click);
             // 
             // label3
             // 
@@ -275,16 +275,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Current Account :";
             // 
-            // ProfileListbutton
-            // 
-            this.ProfileListbutton.Location = new System.Drawing.Point(3, 147);
-            this.ProfileListbutton.Name = "ProfileListbutton";
-            this.ProfileListbutton.Size = new System.Drawing.Size(194, 48);
-            this.ProfileListbutton.TabIndex = 6;
-            this.ProfileListbutton.Text = "Profile List";
-            this.ProfileListbutton.UseVisualStyleBackColor = true;
-            this.ProfileListbutton.Click += new System.EventHandler(this.ProfileListbutton_Click);
-            // 
             // MainFormManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -329,7 +319,6 @@
         private System.Windows.Forms.Button EditProfilebutton;
         private System.Windows.Forms.Button LogOutbutton;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button EditEmployeeProfilebutton;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
