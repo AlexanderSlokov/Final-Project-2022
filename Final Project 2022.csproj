@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Classes\CurrentUser.cs" />
     <Compile Include="Classes\DatabaseOperating.cs" />
+    <Compile Include="Classes\EmployeeModel.cs" />
     <Compile Include="Classes\EMPLOYEES.cs" />
     <Compile Include="EmployeeControl_Manager\ProfileListForm.cs">
       <SubType>Form</SubType>

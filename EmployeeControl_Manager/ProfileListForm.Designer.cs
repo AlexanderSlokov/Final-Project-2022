@@ -131,7 +131,7 @@
             this.dataGridViewEmployeeList.Name = "dataGridViewEmployeeList";
             this.dataGridViewEmployeeList.RowHeadersWidth = 51;
             this.dataGridViewEmployeeList.RowTemplate.Height = 100;
-            this.dataGridViewEmployeeList.Size = new System.Drawing.Size(703, 350);
+            this.dataGridViewEmployeeList.Size = new System.Drawing.Size(703, 307);
             this.dataGridViewEmployeeList.TabIndex = 11;
             // 
             // ButtonToEXcelFileList
@@ -191,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 467);
+            this.ClientSize = new System.Drawing.Size(888, 431);
             this.Controls.Add(this.radioButtonYes);
             this.Controls.Add(this.ButtonToEXcelFileList);
             this.Controls.Add(this.buttonCheckList);
