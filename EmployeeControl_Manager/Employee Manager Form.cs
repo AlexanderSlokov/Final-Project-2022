@@ -81,8 +81,6 @@ namespace Final_Project_2022.EmployeeControl_Manager
             dataGridViewEmployee.Sort(dataGridViewEmployee.Columns[0], ListSortDirection.Ascending);
         }
 
-
-
-
+        
     }
 }

@@ -373,6 +373,7 @@
             this.buttonUploadImage.TabIndex = 122;
             this.buttonUploadImage.Text = "Upload Image";
             this.buttonUploadImage.UseVisualStyleBackColor = false;
+            
             // 
             // textBoxPhone
             // 
