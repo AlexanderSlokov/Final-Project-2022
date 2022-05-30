@@ -65,9 +65,7 @@
     <Compile Include="Classes\EmployeeDB.cs" />
     <Compile Include="Classes\EmployeeModel.cs" />
     <Compile Include="Classes\EMPLOYEES.cs" />
-    <Compile Include="Classes\ServiceDAO.cs" />
-    <Compile Include="DTO\DataProvider.cs" />
-    <Compile Include="DTO\Service.cs" />
+    <Compile Include="Classes\ServicesDB.cs" />
     <Compile Include="EmployeeControl_Manager\Employee Manager Form.cs">
       <SubType>Form</SubType>
     </Compile>
