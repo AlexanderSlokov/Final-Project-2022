@@ -40,4 +40,6 @@ namespace Final_Project_2022.Classes
         public static string Salary_per_hour { get => salary_per_hour; set => salary_per_hour = value; }   
         public static Image Image { get => image; set => image = value; }       
     }
+
+   
 }

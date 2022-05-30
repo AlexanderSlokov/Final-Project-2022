@@ -29,5 +29,11 @@ namespace Final_Project_2022.MainForms
             Employee_Manager_Form employee_Manager_Form = new Employee_Manager_Form();      
             employee_Manager_Form.ShowDialog(); 
         }
+
+        private void buttonServiceManagement_Click(object sender, EventArgs e)
+        {
+            ServiceManagement serviceManagement = new ServiceManagement();  
+            serviceManagement.ShowDialog(); 
+        }
     }
 }

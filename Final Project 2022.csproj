@@ -58,12 +58,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\AccountDB.cs" />
+    <Compile Include="Classes\CurrentEmployee.cs" />
     <Compile Include="Classes\CurrentUser.cs" />
     <Compile Include="Classes\DatabaseOperating.cs" />
     <Compile Include="Classes\DataValidate.cs" />
     <Compile Include="Classes\EmployeeDB.cs" />
     <Compile Include="Classes\EmployeeModel.cs" />
     <Compile Include="Classes\EMPLOYEES.cs" />
+    <Compile Include="Classes\ServiceDAO.cs" />
+    <Compile Include="DTO\DataProvider.cs" />
+    <Compile Include="DTO\Service.cs" />
     <Compile Include="EmployeeControl_Manager\Employee Manager Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +80,12 @@
     <Compile Include="EmployeeControl_Manager\ProfileListForm.Designer.cs">
       <DependentUpon>ProfileListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeControl_Manager\ServiceManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeControl_Manager\ServiceManagement.Designer.cs">
+      <DependentUpon>ServiceManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login Management\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +97,12 @@
     </Compile>
     <Compile Include="MainForms\MainFormEmployee.Designer.cs">
       <DependentUpon>MainFormEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\MainFormLabor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\MainFormLabor.Designer.cs">
+      <DependentUpon>MainFormLabor.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForms\MainFormManager.cs">
       <SubType>Form</SubType>
@@ -101,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeControl_Manager\ProfileListForm.resx">
       <DependentUpon>ProfileListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeControl_Manager\ServiceManagement.resx">
+      <DependentUpon>ServiceManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login Management\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

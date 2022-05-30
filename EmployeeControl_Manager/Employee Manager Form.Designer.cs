@@ -64,6 +64,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonSwitchLabors = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEMPLOYEE)).BeginInit();
             this.SuspendLayout();
@@ -78,11 +79,12 @@
             this.buttonSwitchEmployee.Location = new System.Drawing.Point(776, 9);
             this.buttonSwitchEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSwitchEmployee.Name = "buttonSwitchEmployee";
-            this.buttonSwitchEmployee.Size = new System.Drawing.Size(539, 47);
+            this.buttonSwitchEmployee.Size = new System.Drawing.Size(332, 47);
             this.buttonSwitchEmployee.TabIndex = 145;
             this.buttonSwitchEmployee.Text = "EMPLOYEE";
             this.buttonSwitchEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonSwitchEmployee.UseVisualStyleBackColor = false;
+            this.buttonSwitchEmployee.Click += new System.EventHandler(this.buttonSwitchEmployee_Click);
             // 
             // buttonSwitchManagers
             // 
@@ -91,14 +93,15 @@
             this.buttonSwitchManagers.FlatAppearance.BorderSize = 0;
             this.buttonSwitchManagers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSwitchManagers.ForeColor = System.Drawing.Color.Linen;
-            this.buttonSwitchManagers.Location = new System.Drawing.Point(1323, 9);
+            this.buttonSwitchManagers.Location = new System.Drawing.Point(1116, 8);
             this.buttonSwitchManagers.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSwitchManagers.Name = "buttonSwitchManagers";
-            this.buttonSwitchManagers.Size = new System.Drawing.Size(455, 47);
+            this.buttonSwitchManagers.Size = new System.Drawing.Size(345, 47);
             this.buttonSwitchManagers.TabIndex = 146;
             this.buttonSwitchManagers.Text = "MANAGERS";
             this.buttonSwitchManagers.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonSwitchManagers.UseVisualStyleBackColor = false;
+            this.buttonSwitchManagers.Click += new System.EventHandler(this.buttonSwitchManagers_Click);
             // 
             // buttonRefreshList
             // 
@@ -113,6 +116,7 @@
             this.buttonRefreshList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonRefreshList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonRefreshList.UseVisualStyleBackColor = true;
+            this.buttonRefreshList.Click += new System.EventHandler(this.buttonRefreshList_Click);
             // 
             // comboBoxPosition
             // 
@@ -155,6 +159,7 @@
             this.buttonDelete.Text = "DELETE";
             this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonUpdateInformation
             // 
@@ -171,6 +176,7 @@
             this.buttonUpdateInformation.Text = "UPDATE INFORMATION";
             this.buttonUpdateInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonUpdateInformation.UseVisualStyleBackColor = false;
+            this.buttonUpdateInformation.Click += new System.EventHandler(this.buttonUpdateInformation_Click);
             // 
             // buttonAddEmployee
             // 
@@ -187,6 +193,7 @@
             this.buttonAddEmployee.Text = "ADD NEW";
             this.buttonAddEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonAddEmployee.UseVisualStyleBackColor = false;
+            this.buttonAddEmployee.Click += new System.EventHandler(this.buttonAddEmployee_Click);
             // 
             // label11
             // 
@@ -212,6 +219,7 @@
             this.checkBoxShowPassword.TabIndex = 137;
             this.checkBoxShowPassword.Text = "Show Password";
             this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            this.checkBoxShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPassword_CheckedChanged);
             // 
             // textBoxUsername
             // 
@@ -290,6 +298,7 @@
             this.dataGridViewEmployee.RowTemplate.Height = 80;
             this.dataGridViewEmployee.Size = new System.Drawing.Size(1003, 499);
             this.dataGridViewEmployee.TabIndex = 112;
+            this.dataGridViewEmployee.Click += new System.EventHandler(this.dataGridViewEmployee_Click);
             // 
             // label9
             // 
@@ -373,7 +382,7 @@
             this.buttonUploadImage.TabIndex = 122;
             this.buttonUploadImage.Text = "Upload Image";
             this.buttonUploadImage.UseVisualStyleBackColor = false;
-            
+            this.buttonUploadImage.Click += new System.EventHandler(this.buttonUploadImage_Click);
             // 
             // textBoxPhone
             // 
@@ -471,11 +480,29 @@
             this.label2.TabIndex = 113;
             this.label2.Text = "Full Name:";
             // 
+            // buttonSwitchLabors
+            // 
+            this.buttonSwitchLabors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.buttonSwitchLabors.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSwitchLabors.FlatAppearance.BorderSize = 0;
+            this.buttonSwitchLabors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSwitchLabors.ForeColor = System.Drawing.Color.Snow;
+            this.buttonSwitchLabors.Location = new System.Drawing.Point(1469, 8);
+            this.buttonSwitchLabors.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSwitchLabors.Name = "buttonSwitchLabors";
+            this.buttonSwitchLabors.Size = new System.Drawing.Size(309, 47);
+            this.buttonSwitchLabors.TabIndex = 147;
+            this.buttonSwitchLabors.Text = "LABORS";
+            this.buttonSwitchLabors.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonSwitchLabors.UseVisualStyleBackColor = false;
+            this.buttonSwitchLabors.Click += new System.EventHandler(this.buttonSwitchLabors_Click);
+            // 
             // Employee_Manager_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1791, 583);
+            this.Controls.Add(this.buttonSwitchLabors);
             this.Controls.Add(this.buttonSwitchEmployee);
             this.Controls.Add(this.buttonSwitchManagers);
             this.Controls.Add(this.buttonRefreshList);
@@ -558,5 +585,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonSwitchLabors;
     }
 }

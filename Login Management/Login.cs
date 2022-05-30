@@ -21,7 +21,8 @@ namespace Final_Project_2022
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
-        {
+        
+       {
             DatabaseOperating db = new DatabaseOperating();
 
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -43,20 +44,31 @@ namespace Final_Project_2022
             {
                     this.DialogResult = DialogResult.OK;
                     MessageBox.Show("Welcome, and have a great day!");
-                    Employ.getDataOnUserName();
+                    string Username = textBox_Username.Text.Trim(); 
+                    EmployeeModel LoginEmployee = Employ.getDataOnUserName(Username);
+
                 //active main form base on position
-                if (CurrentUser.Pos == "Manager")
+                if (LoginEmployee.Position == "Manager")
                 {
+                   //you are here
                     MainFormManager dashBoard = new MainFormManager();
                     dashBoard.Show(this);
                     this.Hide();
                 }
-                else if (CurrentUser.Pos == "Waitress")
+                else if (LoginEmployee.Position == "Employee")
                 {
+
                     MainFormEmployee dashBoardEmployee = new MainFormEmployee();
                     dashBoardEmployee.Show(this);
                     this.Hide();
 
+                }
+                else if (LoginEmployee.Position == "Labor")
+                {
+
+                    MainFormLabor dashBoardLabor = new MainFormLabor();
+                    dashBoardLabor.Show(this);
+                    this.Hide();
                 }
             }
             else
@@ -81,8 +93,8 @@ namespace Final_Project_2022
         private void LoginForm_Load(object sender, EventArgs e)
         {
             textBox_Username.Select();
-            textBox_Username.Text = "Cielta";
-            textBox_Password.Text = "123";
+            textBox_Username.Text = "cielta";
+            textBox_Password.Text = "1";
         }
     }   
 }

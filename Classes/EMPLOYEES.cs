@@ -12,13 +12,14 @@ namespace Final_Project_2022.Classes
     {
         DatabaseOperating dsop = new DatabaseOperating();
 
-        public void getDataOnUserName ()
+        public EmployeeModel getDataOnUserName(string username)
         {
+            EmployeeModel employee = new EmployeeModel();       
             try
             {
                 //use SQL command to get all data
-                SqlCommand command = new SqlCommand("SELECT * FROM employee", dsop.GetConnection);
-                //command.Parameters.Add("@UserName", SqlDbType.Int).Value = CurrentUser.UserName;
+                SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE username = @UserName", dsop.GetConnection);
+                command.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = username;
                 dsop.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
                 //read data on that id
@@ -26,27 +27,37 @@ namespace Final_Project_2022.Classes
                 {
                     
                     
-                    CurrentUser.Id =  Convert.ToInt32(reader["id"]);                 
-                    CurrentUser.UserName = reader["username"].ToString();
-                    CurrentUser.Pass = reader["password"].ToString();                      
-                    CurrentUser.Name = reader["name"].ToString();
-                    CurrentUser.Gender = reader["gender"].ToString();
-                    CurrentUser.Bdate = reader["birthDate"].ToString();
-                    CurrentUser.Email = reader["email"].ToString();
-                    CurrentUser.Phone = reader["phoneNum"].ToString();                   
-                    CurrentUser.Pos = reader["position"].ToString();
-                    CurrentUser.Salary_per_hour = reader["salary_per_hour"].ToString();
-                    MemoryStream stream = new MemoryStream((Byte)reader["image"]);
-                    Image RetImage = Image.FromStream(stream);
-                    CurrentUser.Image = RetImage;
+                    employee.Id =  Convert.ToInt32(reader["id"]);
+                    employee.Username = reader["username"].ToString();
+                    employee.Password = reader["password"].ToString();
+                    employee.Name = reader["name"].ToString();
+                    employee.Gender = reader["gender"].ToString();
+                    employee.BirthDate = Convert.ToDateTime(reader["birthDate"].ToString());
+                    employee.Email = reader["email"].ToString();
+                    employee.PhoneNum = reader["phoneNum"].ToString();
+                    employee.Position = reader["position"].ToString();
+                    employee.Salary_per_hour = float.Parse(reader["salary_per_hour"].ToString());
+
+                    try
+                    {
+                        MemoryStream stream = new MemoryStream((byte[])reader["image"]);
+                        Image RetImage = Image.FromStream(stream);
+                        employee.Image = RetImage;
+                    }
+                    catch (Exception ex)
+                    {
+                        employee.Image = null;
+                    }
+                    
                 }
                 reader.Close();
                 dsop.closeConnection();
-                
+                return employee;
             }
+
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex);
+                return null;
             }
 
 

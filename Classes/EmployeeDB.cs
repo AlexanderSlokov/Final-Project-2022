@@ -191,6 +191,7 @@ namespace Final_Project_2022.Classes
                 SqlCommand command = new SqlCommand("UPDATE employee SET name = @name, position = @position, " +
                             "birthDate = @birthDate, gender = @gender, phoneNum = @phoneNum, email = @email, image = @image, " +
                             "salary_per_hour = @salary_per_hour, username = @username, password = @password WHERE id = @id", connection.GetConnection);
+                
                 command.Parameters.Add("@id", SqlDbType.Int).Value = employee.Id;
                 if (employee.Name == String.Empty || employee.Name == null)
                 {
@@ -389,7 +390,7 @@ namespace Final_Project_2022.Classes
 
         public bool DeleteEmployee(int ID)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM EMPLOYEE WHERE id = @id", connection.GetConnection);
+            SqlCommand command = new SqlCommand("DELETE FROM employee WHERE id = @id", connection.GetConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
             connection.openConnection();
             try
@@ -418,7 +419,7 @@ namespace Final_Project_2022.Classes
         public DataTable GetEmployeesDataTable()
         {
             SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE position = @position", connection.GetConnection);
-            command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "employee";
+            command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "Employee";
             connection.openConnection();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
@@ -431,7 +432,7 @@ namespace Final_Project_2022.Classes
         {
 
             SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE position = @position", connection.GetConnection);
-            command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "manager";
+            command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "Manager";
             connection.openConnection();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
@@ -441,13 +442,25 @@ namespace Final_Project_2022.Classes
             return table;
         }
 
+        public DataTable GetLaborDataTable()
+        { 
+            SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE position = @position", connection.GetConnection);
+            command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "Labor";
+            connection.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+
+            adapter.Fill(table);
+            connection.closeConnection();
+            return table;
+        }
         public List<EmployeeModel> GetManagersList()
         {
             List<EmployeeModel> employeeList = new List<EmployeeModel>();
             try
             {
                 SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE position = @position", connection.GetConnection);
-                command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "manager";
+                command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "Manager";
 
                 connection.openConnection();
                 SqlDataReader reader = command.ExecuteReader();
