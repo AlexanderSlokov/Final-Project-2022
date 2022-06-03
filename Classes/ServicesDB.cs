@@ -1,5 +1,7 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 using Final_Project_2022.Classes;
 namespace Final_Project_2022.Classes
 {
@@ -7,11 +9,11 @@ namespace Final_Project_2022.Classes
     internal class ServicesDB
     {
         DatabaseOperating databaseOperating = new DatabaseOperating();
-        public bool InsertNewServices(int serviceName, string unit, int price)
+        public bool InsertNewServices(string serviceName, string unit, int price)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO services (ServicesName, Unit, Price) VALUES (@svname, @unit, @price)", databaseOperating.GetConnection);
+            SqlCommand command = new SqlCommand("INSERT INTO services (ServiceName, Unit, Price) VALUES (@svname, @unit, @price)", databaseOperating.GetConnection);
             command.Parameters.Add("@svname", SqlDbType.NVarChar).Value = serviceName;
-            command.Parameters.Add("@unit", SqlDbType.VarChar).Value = unit;
+            command.Parameters.Add("@unit", SqlDbType.NVarChar).Value = unit;
             command.Parameters.Add("@price", SqlDbType.Int).Value = price;
             databaseOperating.openConnection();
 
@@ -60,6 +62,30 @@ namespace Final_Project_2022.Classes
 
             return table;
 
+        }
+
+        public bool checkServiceName(string serviceName)
+        {
+            //
+            SqlCommand command = new SqlCommand("SELECT * FROM services WHERE ServiceName = @cSN", databaseOperating.GetConnection);
+
+            command.Parameters.Add("@cSN", SqlDbType.NVarChar).Value = serviceName;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+
+            adapter.Fill(table);
+            // neu ton tai
+            if ((table.Rows.Count > 0))
+            {
+                return false;
+            }
+            // nguoc lai
+            else
+            {
+                return true;
+            }
+            //
         }
     }
 }

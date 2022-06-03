@@ -47,6 +47,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.GridViewServicesList = new System.Windows.Forms.DataGridView();
+            this.labelServiceNameError = new System.Windows.Forms.Label();
+            this.labelServiceUnitNameError = new System.Windows.Forms.Label();
+            this.labelServicePriceError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewServicesList)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +85,7 @@
             this.buttonRefreshList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonRefreshList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonRefreshList.UseVisualStyleBackColor = false;
+            this.buttonRefreshList.Click += new System.EventHandler(this.buttonRefreshList_Click);
             // 
             // btnthem
             // 
@@ -98,6 +102,7 @@
             this.btnthem.Text = "ADD NEW";
             this.btnthem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnthem.UseVisualStyleBackColor = false;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // btncapnhat
             // 
@@ -139,7 +144,7 @@
             this.btncuoi.Name = "btncuoi";
             this.btncuoi.Size = new System.Drawing.Size(72, 54);
             this.btncuoi.TabIndex = 153;
-            this.btncuoi.Text = "Cuối";
+            this.btncuoi.Text = "Last";
             this.btncuoi.UseVisualStyleBackColor = true;
             // 
             // btndau
@@ -149,17 +154,17 @@
             this.btndau.Name = "btndau";
             this.btndau.Size = new System.Drawing.Size(72, 54);
             this.btndau.TabIndex = 152;
-            this.btndau.Text = "Đầu";
+            this.btndau.Text = "First";
             this.btndau.UseVisualStyleBackColor = true;
             // 
             // btnxuong
             // 
-            this.btnxuong.Location = new System.Drawing.Point(511, 398);
+            this.btnxuong.Location = new System.Drawing.Point(487, 398);
             this.btnxuong.Margin = new System.Windows.Forms.Padding(4);
             this.btnxuong.Name = "btnxuong";
-            this.btnxuong.Size = new System.Drawing.Size(72, 54);
+            this.btnxuong.Size = new System.Drawing.Size(96, 54);
             this.btnxuong.TabIndex = 151;
-            this.btnxuong.Text = "Sau";
+            this.btnxuong.Text = "Previous";
             this.btnxuong.UseVisualStyleBackColor = true;
             // 
             // btnlen
@@ -169,11 +174,14 @@
             this.btnlen.Name = "btnlen";
             this.btnlen.Size = new System.Drawing.Size(72, 54);
             this.btnlen.TabIndex = 150;
-            this.btnlen.Text = "Tiếp";
+            this.btnlen.Text = "Next";
             this.btnlen.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labelServicePriceError);
+            this.panel1.Controls.Add(this.labelServiceUnitNameError);
+            this.panel1.Controls.Add(this.labelServiceNameError);
             this.panel1.Controls.Add(this.textBoxPrice);
             this.panel1.Controls.Add(this.textBoxUnitName);
             this.panel1.Controls.Add(this.textBoxServiceName);
@@ -182,28 +190,28 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(615, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(359, 296);
+            this.panel1.Size = new System.Drawing.Size(449, 296);
             this.panel1.TabIndex = 149;
             // 
             // textBoxPrice
             // 
             this.textBoxPrice.Location = new System.Drawing.Point(121, 186);
             this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(224, 22);
+            this.textBoxPrice.Size = new System.Drawing.Size(313, 22);
             this.textBoxPrice.TabIndex = 5;
             // 
             // textBoxUnitName
             // 
             this.textBoxUnitName.Location = new System.Drawing.Point(121, 108);
             this.textBoxUnitName.Name = "textBoxUnitName";
-            this.textBoxUnitName.Size = new System.Drawing.Size(224, 22);
+            this.textBoxUnitName.Size = new System.Drawing.Size(313, 22);
             this.textBoxUnitName.TabIndex = 4;
             // 
             // textBoxServiceName
             // 
             this.textBoxServiceName.Location = new System.Drawing.Point(121, 31);
             this.textBoxServiceName.Name = "textBoxServiceName";
-            this.textBoxServiceName.Size = new System.Drawing.Size(224, 22);
+            this.textBoxServiceName.Size = new System.Drawing.Size(313, 22);
             this.textBoxServiceName.TabIndex = 3;
             // 
             // label4
@@ -251,12 +259,43 @@
             this.GridViewServicesList.RowTemplate.Height = 24;
             this.GridViewServicesList.Size = new System.Drawing.Size(335, 402);
             this.GridViewServicesList.TabIndex = 160;
+            this.GridViewServicesList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewServicesList_CellContentClick);
+            // 
+            // labelServiceNameError
+            // 
+            this.labelServiceNameError.AutoSize = true;
+            this.labelServiceNameError.ForeColor = System.Drawing.Color.Red;
+            this.labelServiceNameError.Location = new System.Drawing.Point(121, 60);
+            this.labelServiceNameError.Name = "labelServiceNameError";
+            this.labelServiceNameError.Size = new System.Drawing.Size(119, 16);
+            this.labelServiceNameError.TabIndex = 6;
+            this.labelServiceNameError.Text = "ServiceNameError";
+            // 
+            // labelServiceUnitNameError
+            // 
+            this.labelServiceUnitNameError.AutoSize = true;
+            this.labelServiceUnitNameError.ForeColor = System.Drawing.Color.Red;
+            this.labelServiceUnitNameError.Location = new System.Drawing.Point(121, 133);
+            this.labelServiceUnitNameError.Name = "labelServiceUnitNameError";
+            this.labelServiceUnitNameError.Size = new System.Drawing.Size(142, 16);
+            this.labelServiceUnitNameError.TabIndex = 7;
+            this.labelServiceUnitNameError.Text = "ServiceUnitNameError";
+            // 
+            // labelServicePriceError
+            // 
+            this.labelServicePriceError.AutoSize = true;
+            this.labelServicePriceError.ForeColor = System.Drawing.Color.Red;
+            this.labelServicePriceError.Location = new System.Drawing.Point(121, 211);
+            this.labelServicePriceError.Name = "labelServicePriceError";
+            this.labelServicePriceError.Size = new System.Drawing.Size(113, 16);
+            this.labelServicePriceError.TabIndex = 8;
+            this.labelServicePriceError.Text = "ServicePriceError";
             // 
             // ServiceManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 466);
+            this.ClientSize = new System.Drawing.Size(1076, 466);
             this.Controls.Add(this.GridViewServicesList);
             this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.btnketthuc);
@@ -300,5 +339,8 @@
         private System.Windows.Forms.TextBox textBoxUnitName;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.DataGridView GridViewServicesList;
+        private System.Windows.Forms.Label labelServicePriceError;
+        private System.Windows.Forms.Label labelServiceUnitNameError;
+        private System.Windows.Forms.Label labelServiceNameError;
     }
 }
