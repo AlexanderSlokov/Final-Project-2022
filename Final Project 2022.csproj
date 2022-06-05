@@ -66,6 +66,13 @@
     <Compile Include="Classes\EmployeeModel.cs" />
     <Compile Include="Classes\EMPLOYEES.cs" />
     <Compile Include="Classes\ServicesDB.cs" />
+    <Compile Include="Classes\Shift\ShiftDB.cs" />
+    <Compile Include="EmployeeControl_Manager\EditUserProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeControl_Manager\EditUserProfile.Designer.cs">
+      <DependentUpon>EditUserProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeControl_Manager\Employee Manager Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +90,12 @@
     </Compile>
     <Compile Include="EmployeeControl_Manager\ServiceManagement.Designer.cs">
       <DependentUpon>ServiceManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeControl_Manager\ShiftManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeControl_Manager\ShiftManagement.Designer.cs">
+      <DependentUpon>ShiftManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Login Management\Login.cs">
       <SubType>Form</SubType>
@@ -110,6 +123,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EmployeeControl_Manager\EditUserProfile.resx">
+      <DependentUpon>EditUserProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeControl_Manager\Employee Manager Form.resx">
       <DependentUpon>Employee Manager Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeControl_Manager\ServiceManagement.resx">
       <DependentUpon>ServiceManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeControl_Manager\ShiftManagement.resx">
+      <DependentUpon>ShiftManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login Management\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

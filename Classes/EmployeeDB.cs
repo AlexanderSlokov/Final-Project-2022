@@ -416,6 +416,17 @@ namespace Final_Project_2022.Classes
             }
         }
 
+
+        public DataTable GetAllEmployee_ForComnboBox_Schedule ()
+        {
+            SqlCommand command = new SqlCommand("SELECT * FROM employee", connection.GetConnection);
+            connection.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            connection.closeConnection();
+            return table;
+        }
         public DataTable GetEmployeesDataTable()
         {
             SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE position = @position", connection.GetConnection);
@@ -441,7 +452,6 @@ namespace Final_Project_2022.Classes
             connection.closeConnection();
             return table;
         }
-
         public DataTable GetLaborDataTable()
         { 
             SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE position = @position", connection.GetConnection);

@@ -39,6 +39,9 @@
             this.btnxuong = new System.Windows.Forms.Button();
             this.btnlen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelServicePriceError = new System.Windows.Forms.Label();
+            this.labelServiceUnitNameError = new System.Windows.Forms.Label();
+            this.labelServiceNameError = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.textBoxUnitName = new System.Windows.Forms.TextBox();
             this.textBoxServiceName = new System.Windows.Forms.TextBox();
@@ -47,9 +50,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.GridViewServicesList = new System.Windows.Forms.DataGridView();
-            this.labelServiceNameError = new System.Windows.Forms.Label();
-            this.labelServiceUnitNameError = new System.Windows.Forms.Label();
-            this.labelServicePriceError = new System.Windows.Forms.Label();
+            this.labelInStockError = new System.Windows.Forms.Label();
+            this.textBoxInStock = new System.Windows.Forms.TextBox();
+            this.label = new System.Windows.Forms.Label();
+            this.labelServiceIDError = new System.Windows.Forms.Label();
+            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewServicesList)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +75,7 @@
             this.btnketthuc.Text = "EXIT";
             this.btnketthuc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnketthuc.UseVisualStyleBackColor = false;
+            this.btnketthuc.Click += new System.EventHandler(this.btnketthuc_Click);
             // 
             // buttonRefreshList
             // 
@@ -119,6 +126,7 @@
             this.btncapnhat.Text = "UPDATE INFORMATION";
             this.btncapnhat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btncapnhat.UseVisualStyleBackColor = false;
+            this.btncapnhat.Click += new System.EventHandler(this.btncapnhat_Click);
             // 
             // btnxoa
             // 
@@ -146,6 +154,7 @@
             this.btncuoi.TabIndex = 153;
             this.btncuoi.Text = "Last";
             this.btncuoi.UseVisualStyleBackColor = true;
+            this.btncuoi.Click += new System.EventHandler(this.btncuoi_Click);
             // 
             // btndau
             // 
@@ -156,6 +165,7 @@
             this.btndau.TabIndex = 152;
             this.btndau.Text = "First";
             this.btndau.UseVisualStyleBackColor = true;
+            this.btndau.Click += new System.EventHandler(this.btndau_Click);
             // 
             // btnxuong
             // 
@@ -166,6 +176,7 @@
             this.btnxuong.TabIndex = 151;
             this.btnxuong.Text = "Previous";
             this.btnxuong.UseVisualStyleBackColor = true;
+            this.btnxuong.Click += new System.EventHandler(this.btnxuong_Click);
             // 
             // btnlen
             // 
@@ -176,9 +187,17 @@
             this.btnlen.TabIndex = 150;
             this.btnlen.Text = "Next";
             this.btnlen.UseVisualStyleBackColor = true;
+            this.btnlen.Click += new System.EventHandler(this.btnlen_Click);
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel1.Controls.Add(this.labelServiceIDError);
+            this.panel1.Controls.Add(this.textBoxID);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.labelInStockError);
+            this.panel1.Controls.Add(this.textBoxInStock);
+            this.panel1.Controls.Add(this.label);
             this.panel1.Controls.Add(this.labelServicePriceError);
             this.panel1.Controls.Add(this.labelServiceUnitNameError);
             this.panel1.Controls.Add(this.labelServiceNameError);
@@ -188,28 +207,58 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(615, 50);
+            this.panel1.Location = new System.Drawing.Point(615, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(449, 296);
+            this.panel1.Size = new System.Drawing.Size(449, 289);
             this.panel1.TabIndex = 149;
+            // 
+            // labelServicePriceError
+            // 
+            this.labelServicePriceError.AutoSize = true;
+            this.labelServicePriceError.ForeColor = System.Drawing.Color.Red;
+            this.labelServicePriceError.Location = new System.Drawing.Point(121, 187);
+            this.labelServicePriceError.Name = "labelServicePriceError";
+            this.labelServicePriceError.Size = new System.Drawing.Size(113, 16);
+            this.labelServicePriceError.TabIndex = 8;
+            this.labelServicePriceError.Text = "ServicePriceError";
+            // 
+            // labelServiceUnitNameError
+            // 
+            this.labelServiceUnitNameError.AutoSize = true;
+            this.labelServiceUnitNameError.ForeColor = System.Drawing.Color.Red;
+            this.labelServiceUnitNameError.Location = new System.Drawing.Point(121, 134);
+            this.labelServiceUnitNameError.Name = "labelServiceUnitNameError";
+            this.labelServiceUnitNameError.Size = new System.Drawing.Size(142, 16);
+            this.labelServiceUnitNameError.TabIndex = 7;
+            this.labelServiceUnitNameError.Text = "ServiceUnitNameError";
+            // 
+            // labelServiceNameError
+            // 
+            this.labelServiceNameError.AutoSize = true;
+            this.labelServiceNameError.ForeColor = System.Drawing.Color.Red;
+            this.labelServiceNameError.Location = new System.Drawing.Point(121, 86);
+            this.labelServiceNameError.Name = "labelServiceNameError";
+            this.labelServiceNameError.Size = new System.Drawing.Size(119, 16);
+            this.labelServiceNameError.TabIndex = 6;
+            this.labelServiceNameError.Text = "ServiceNameError";
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(121, 186);
+            this.textBoxPrice.Location = new System.Drawing.Point(121, 162);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(313, 22);
             this.textBoxPrice.TabIndex = 5;
             // 
             // textBoxUnitName
             // 
-            this.textBoxUnitName.Location = new System.Drawing.Point(121, 108);
+            this.textBoxUnitName.Location = new System.Drawing.Point(121, 109);
             this.textBoxUnitName.Name = "textBoxUnitName";
             this.textBoxUnitName.Size = new System.Drawing.Size(313, 22);
             this.textBoxUnitName.TabIndex = 4;
             // 
             // textBoxServiceName
             // 
-            this.textBoxServiceName.Location = new System.Drawing.Point(121, 31);
+            this.textBoxServiceName.Location = new System.Drawing.Point(121, 57);
             this.textBoxServiceName.Name = "textBoxServiceName";
             this.textBoxServiceName.Size = new System.Drawing.Size(313, 22);
             this.textBoxServiceName.TabIndex = 3;
@@ -217,7 +266,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 193);
+            this.label4.Location = new System.Drawing.Point(4, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 16);
             this.label4.TabIndex = 2;
@@ -226,7 +275,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 115);
+            this.label3.Location = new System.Drawing.Point(4, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 16);
             this.label3.TabIndex = 1;
@@ -235,7 +284,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 38);
+            this.label2.Location = new System.Drawing.Point(4, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 16);
             this.label2.TabIndex = 0;
@@ -261,35 +310,57 @@
             this.GridViewServicesList.TabIndex = 160;
             this.GridViewServicesList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewServicesList_CellContentClick);
             // 
-            // labelServiceNameError
+            // labelInStockError
             // 
-            this.labelServiceNameError.AutoSize = true;
-            this.labelServiceNameError.ForeColor = System.Drawing.Color.Red;
-            this.labelServiceNameError.Location = new System.Drawing.Point(121, 60);
-            this.labelServiceNameError.Name = "labelServiceNameError";
-            this.labelServiceNameError.Size = new System.Drawing.Size(119, 16);
-            this.labelServiceNameError.TabIndex = 6;
-            this.labelServiceNameError.Text = "ServiceNameError";
+            this.labelInStockError.AutoSize = true;
+            this.labelInStockError.ForeColor = System.Drawing.Color.Red;
+            this.labelInStockError.Location = new System.Drawing.Point(121, 231);
+            this.labelInStockError.Name = "labelInStockError";
+            this.labelInStockError.Size = new System.Drawing.Size(126, 16);
+            this.labelInStockError.TabIndex = 164;
+            this.labelInStockError.Text = "ServiceInStockError";
             // 
-            // labelServiceUnitNameError
+            // textBoxInStock
             // 
-            this.labelServiceUnitNameError.AutoSize = true;
-            this.labelServiceUnitNameError.ForeColor = System.Drawing.Color.Red;
-            this.labelServiceUnitNameError.Location = new System.Drawing.Point(121, 133);
-            this.labelServiceUnitNameError.Name = "labelServiceUnitNameError";
-            this.labelServiceUnitNameError.Size = new System.Drawing.Size(142, 16);
-            this.labelServiceUnitNameError.TabIndex = 7;
-            this.labelServiceUnitNameError.Text = "ServiceUnitNameError";
+            this.textBoxInStock.Location = new System.Drawing.Point(121, 206);
+            this.textBoxInStock.Name = "textBoxInStock";
+            this.textBoxInStock.Size = new System.Drawing.Size(313, 22);
+            this.textBoxInStock.TabIndex = 163;
             // 
-            // labelServicePriceError
+            // label
             // 
-            this.labelServicePriceError.AutoSize = true;
-            this.labelServicePriceError.ForeColor = System.Drawing.Color.Red;
-            this.labelServicePriceError.Location = new System.Drawing.Point(121, 211);
-            this.labelServicePriceError.Name = "labelServicePriceError";
-            this.labelServicePriceError.Size = new System.Drawing.Size(113, 16);
-            this.labelServicePriceError.TabIndex = 8;
-            this.labelServicePriceError.Text = "ServicePriceError";
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(4, 213);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(57, 16);
+            this.label.TabIndex = 162;
+            this.label.Text = "In Stock:";
+            // 
+            // labelServiceIDError
+            // 
+            this.labelServiceIDError.AutoSize = true;
+            this.labelServiceIDError.ForeColor = System.Drawing.Color.Red;
+            this.labelServiceIDError.Location = new System.Drawing.Point(121, 29);
+            this.labelServiceIDError.Name = "labelServiceIDError";
+            this.labelServiceIDError.Size = new System.Drawing.Size(95, 16);
+            this.labelServiceIDError.TabIndex = 167;
+            this.labelServiceIDError.Text = "ServiceIDError";
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(121, 4);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(313, 22);
+            this.textBoxID.TabIndex = 166;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 16);
+            this.label6.TabIndex = 165;
+            this.label6.Text = "Service ID:";
             // 
             // ServiceManagement
             // 
@@ -342,5 +413,11 @@
         private System.Windows.Forms.Label labelServicePriceError;
         private System.Windows.Forms.Label labelServiceUnitNameError;
         private System.Windows.Forms.Label labelServiceNameError;
+        private System.Windows.Forms.Label labelServiceIDError;
+        private System.Windows.Forms.TextBox textBoxID;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelInStockError;
+        private System.Windows.Forms.TextBox textBoxInStock;
+        private System.Windows.Forms.Label label;
     }
 }

@@ -132,6 +132,7 @@
             this.comboBoxPosition.Name = "comboBoxPosition";
             this.comboBoxPosition.Size = new System.Drawing.Size(187, 24);
             this.comboBoxPosition.TabIndex = 143;
+            this.comboBoxPosition.SelectedIndexChanged += new System.EventHandler(this.comboBoxPosition_SelectedIndexChanged);
             // 
             // label12
             // 

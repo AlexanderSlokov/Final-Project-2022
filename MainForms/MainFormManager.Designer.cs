@@ -35,18 +35,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonServiceManagement = new System.Windows.Forms.Button();
-            this.button = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonEditProfile = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.CurrentAccountLabel = new System.Windows.Forms.Label();
-            this.EditProfilebutton = new System.Windows.Forms.Button();
             this.LogOutbutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -104,8 +107,8 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Lavender;
             this.panel3.Controls.Add(this.buttonServiceManagement);
-            this.panel3.Controls.Add(this.button);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(218, 202);
             this.panel3.Name = "panel3";
@@ -114,22 +117,14 @@
             // 
             // buttonServiceManagement
             // 
-            this.buttonServiceManagement.Location = new System.Drawing.Point(3, 93);
+            this.buttonServiceManagement.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonServiceManagement.Location = new System.Drawing.Point(3, 39);
             this.buttonServiceManagement.Name = "buttonServiceManagement";
             this.buttonServiceManagement.Size = new System.Drawing.Size(194, 48);
             this.buttonServiceManagement.TabIndex = 10;
-            this.buttonServiceManagement.Text = "Management";
-            this.buttonServiceManagement.UseVisualStyleBackColor = true;
+            this.buttonServiceManagement.Text = "Manage";
+            this.buttonServiceManagement.UseVisualStyleBackColor = false;
             this.buttonServiceManagement.Click += new System.EventHandler(this.buttonServiceManagement_Click);
-            // 
-            // button
-            // 
-            this.button.Location = new System.Drawing.Point(3, 39);
-            this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(194, 48);
-            this.button.TabIndex = 9;
-            this.button.Text = "Add New";
-            this.button.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -142,9 +137,9 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.buttonEditProfile);
+            this.panel5.Controls.Add(this.pictureBox);
             this.panel5.Controls.Add(this.CurrentAccountLabel);
-            this.panel5.Controls.Add(this.EditProfilebutton);
             this.panel5.Controls.Add(this.LogOutbutton);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Location = new System.Drawing.Point(12, 48);
@@ -152,31 +147,39 @@
             this.panel5.Size = new System.Drawing.Size(830, 109);
             this.panel5.TabIndex = 4;
             // 
-            // pictureBox1
+            // buttonEditProfile
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(479, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(119, 100);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.buttonEditProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.buttonEditProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEditProfile.FlatAppearance.BorderSize = 0;
+            this.buttonEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditProfile.ForeColor = System.Drawing.Color.Snow;
+            this.buttonEditProfile.Location = new System.Drawing.Point(618, 4);
+            this.buttonEditProfile.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonEditProfile.Name = "buttonEditProfile";
+            this.buttonEditProfile.Size = new System.Drawing.Size(197, 47);
+            this.buttonEditProfile.TabIndex = 146;
+            this.buttonEditProfile.Text = "EDIT PROFILE";
+            this.buttonEditProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonEditProfile.UseVisualStyleBackColor = false;
+            this.buttonEditProfile.Click += new System.EventHandler(this.buttonEditProfile_Click);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(479, 4);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(119, 100);
+            this.pictureBox.TabIndex = 4;
+            this.pictureBox.TabStop = false;
             // 
             // CurrentAccountLabel
             // 
             this.CurrentAccountLabel.AutoSize = true;
-            this.CurrentAccountLabel.Location = new System.Drawing.Point(125, 14);
+            this.CurrentAccountLabel.Location = new System.Drawing.Point(160, 17);
             this.CurrentAccountLabel.Name = "CurrentAccountLabel";
             this.CurrentAccountLabel.Size = new System.Drawing.Size(187, 16);
             this.CurrentAccountLabel.TabIndex = 3;
             this.CurrentAccountLabel.Text = "CURRENT ACCOUNT LABEL";
-            // 
-            // EditProfilebutton
-            // 
-            this.EditProfilebutton.Location = new System.Drawing.Point(618, 4);
-            this.EditProfilebutton.Name = "EditProfilebutton";
-            this.EditProfilebutton.Size = new System.Drawing.Size(197, 53);
-            this.EditProfilebutton.TabIndex = 2;
-            this.EditProfilebutton.Text = "Edit Profile";
-            this.EditProfilebutton.UseVisualStyleBackColor = true;
             // 
             // LogOutbutton
             // 
@@ -190,11 +193,43 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(13, 14);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 16);
+            this.label6.Size = new System.Drawing.Size(141, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "Current Account :";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MistyRose;
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(424, 202);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 149);
+            this.panel2.TabIndex = 5;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Snow;
+            this.button2.ForeColor = System.Drawing.Color.Coral;
+            this.button2.Location = new System.Drawing.Point(3, 39);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(194, 48);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Manage";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(25, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Schedule Management";
             // 
             // MainFormManager
             // 
@@ -202,19 +237,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
             this.ClientSize = new System.Drawing.Size(858, 368);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "MainFormManager";
             this.Text = "MainFormManager";
+            this.Load += new System.EventHandler(this.MainFormManager_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,14 +267,16 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button EditProfilebutton;
         private System.Windows.Forms.Button LogOutbutton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button EditEmployeeProfilebutton;
         private System.Windows.Forms.Button buttonServiceManagement;
-        private System.Windows.Forms.Button button;
         private System.Windows.Forms.Label CurrentAccountLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button ProfileListbutton;
+        private System.Windows.Forms.Button buttonEditProfile;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label2;
     }
 }

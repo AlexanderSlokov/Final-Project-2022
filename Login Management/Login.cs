@@ -46,11 +46,12 @@ namespace Final_Project_2022
                     MessageBox.Show("Welcome, and have a great day!");
                     string Username = textBox_Username.Text.Trim(); 
                     EmployeeModel LoginEmployee = Employ.getDataOnUserName(Username);
+                    CurrentUser.setUser(LoginEmployee);
 
                 //active main form base on position
                 if (LoginEmployee.Position == "Manager")
                 {
-                   //you are here
+                   
                     MainFormManager dashBoard = new MainFormManager();
                     dashBoard.Show(this);
                     this.Hide();

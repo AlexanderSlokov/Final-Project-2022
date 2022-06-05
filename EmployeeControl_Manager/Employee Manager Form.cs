@@ -98,7 +98,7 @@ namespace Final_Project_2022.EmployeeControl_Manager
                 employee.Id = 0;
             }
             employee.Name = textBoxFullName.Text.Trim();
-            employee.Position = comboBoxPosition.Text.ToLower().Trim();
+            employee.Position = comboBoxPosition.Text.Trim();
             employee.BirthDate = dateTimePicker.Value;
             string gender = "Male";
             if (radioButtonFEMALE.Checked)
@@ -148,7 +148,7 @@ namespace Final_Project_2022.EmployeeControl_Manager
                 employee.Id = 0;
             }
             employee.Name = textBoxFullName.Text.Trim();
-            employee.Position = comboBoxPosition.Text.ToLower().Trim();
+            employee.Position = comboBoxPosition.Text.Trim();
             employee.BirthDate = dateTimePicker.Value;
             string gender = "Male";
             if (radioButtonFEMALE.Checked)
@@ -341,7 +341,10 @@ namespace Final_Project_2022.EmployeeControl_Manager
             GetDataFromGridView();
         }
 
-        
+        private void comboBoxPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
