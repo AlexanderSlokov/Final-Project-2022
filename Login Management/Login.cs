@@ -51,14 +51,14 @@ namespace Final_Project_2022
                 //active main form base on position
                 if (LoginEmployee.Position == "Manager")
                 {
-                   
+                    CurrentUser.LoginTime = DateTime.Now;
                     MainFormManager dashBoard = new MainFormManager();
                     dashBoard.Show(this);
                     this.Hide();
                 }
                 else if (LoginEmployee.Position == "Employee")
                 {
-
+                    CurrentUser.LoginTime = DateTime.Now;
                     MainFormEmployee dashBoardEmployee = new MainFormEmployee();
                     dashBoardEmployee.Show(this);
                     this.Hide();
@@ -66,7 +66,7 @@ namespace Final_Project_2022
                 }
                 else if (LoginEmployee.Position == "Labor")
                 {
-
+                    CurrentUser.LoginTime = DateTime.Now;
                     MainFormLabor dashBoardLabor = new MainFormLabor();
                     dashBoardLabor.Show(this);
                     this.Hide();

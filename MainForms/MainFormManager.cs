@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Final_Project_2022.Classes;
 using Final_Project_2022.EmployeeControl_Manager;
@@ -22,10 +17,8 @@ namespace Final_Project_2022.MainForms
         }
 
         DatabaseOperating database = new DatabaseOperating();
-       
-         
 
-
+        #region button click
         private void ProfileListbutton_Click(object sender, EventArgs e)
         {
             ProfileListForm profileList = new ProfileListForm();
@@ -81,6 +74,31 @@ namespace Final_Project_2022.MainForms
         {
             ShiftManagement shiftManagement = new ShiftManagement();
             shiftManagement.Show(this);
+        }
+
+        private void buttonServiceOrder_Click(object sender, EventArgs e)
+        {
+            service_Order order = new service_Order();  
+            order.Show(this);   
+        }
+
+        private void buttonAttendance_Click(object sender, EventArgs e)
+        {
+            Attendance attendance = new Attendance();
+            attendance.Show(this);  
+        }
+        #endregion
+
+        private void buttonSalary_Click(object sender, EventArgs e)
+        {
+            Salary_Calc salary_Calc = new Salary_Calc();    
+            salary_Calc.Show(this); 
+        }
+
+        private void buttonprintsalary_Click(object sender, EventArgs e)
+        {
+            Print_Salary_Report print_Salary_Report = new Print_Salary_Report();    
+            print_Salary_Report.Show(this); 
         }
     }
 }

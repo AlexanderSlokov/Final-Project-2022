@@ -6,7 +6,7 @@ using Final_Project_2022.Classes;
 namespace Final_Project_2022.Classes
 {
 
-    internal class ServicesDB
+    public class ServicesDB
     {
         DatabaseOperating databaseOperating = new DatabaseOperating();
         public bool InsertNewServices(int ID, string serviceName, string unit, string Instock, int price)

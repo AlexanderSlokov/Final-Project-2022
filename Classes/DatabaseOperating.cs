@@ -33,24 +33,3 @@ namespace Final_Project_2022
         }
     }
 }
-/*
- Create table employee
-CREATE TABLE [dbo].[employee] (
-    [id]              INT           NOT NULL,
-    [name]            NVARCHAR (50) NOT NULL,
-    [position]        NVARCHAR (50) NOT NULL,
-    [birthDate]       DATETIME      NOT NULL,
-    [gender]          NVARCHAR (50) NOT NULL,
-    [phoneNum]        NVARCHAR (50) NOT NULL,
-    [email]           NVARCHAR (50) NOT NULL,
-    [image]           IMAGE         NULL,
-    [salary_per_hour] REAL          NOT NULL,
-    [username]        NVARCHAR (50) NOT NULL,
-    [password]        NVARCHAR (50) NOT NULL,
-    CONSTRAINT [PK_employee] PRIMARY KEY CLUSTERED ([id] ASC),
-    CONSTRAINT [U_employee] UNIQUE NONCLUSTERED ([id] ASC, [username] ASC)
-);
-
-
- 
- */

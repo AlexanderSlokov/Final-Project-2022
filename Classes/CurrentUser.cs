@@ -27,6 +27,9 @@ namespace Final_Project_2022.Classes
 
         private static Image image;
 
+        private static DateTime loginTime;
+        private static DateTime lastLoginTime;
+
         public static int Id { get => id; set => id = value; }
         
         public static string Pass { get => pass; set => pass = value; }
@@ -38,8 +41,10 @@ namespace Final_Project_2022.Classes
         public static string Phone { get => phone; set => phone = value; }      
         public static string Pos { get => pos; set => pos = value; }       
         public static float Salary_per_hour { get => salary_per_hour; set => salary_per_hour = value; }   
-        public static Image Image { get => image; set => image = value; }    
-        
+        public static Image Image { get => image; set => image = value; }
+        public static DateTime LoginTime { get => loginTime; set => loginTime = value; }
+        public static DateTime LastLoginTime { get => lastLoginTime; set => lastLoginTime = value; }
+
         public static void setUser(EmployeeModel employee)
         {
             Id = employee.Id;

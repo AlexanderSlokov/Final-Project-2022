@@ -62,11 +62,25 @@
     <Compile Include="Classes\CurrentUser.cs" />
     <Compile Include="Classes\DatabaseOperating.cs" />
     <Compile Include="Classes\DataValidate.cs" />
-    <Compile Include="Classes\EmployeeDB.cs" />
-    <Compile Include="Classes\EmployeeModel.cs" />
-    <Compile Include="Classes\EMPLOYEES.cs" />
-    <Compile Include="Classes\ServicesDB.cs" />
+    <Compile Include="Classes\Employee\EmployeeDB.cs" />
+    <Compile Include="Classes\Employee\EmployeeModel.cs" />
+    <Compile Include="Classes\Employee\EMPLOYEES.cs" />
+    <Compile Include="Classes\Room\RoomDB.cs" />
+    <Compile Include="Classes\Room\Room_Bill_DB.cs" />
+    <Compile Include="Classes\Attendance\AttendanceDB.cs" />
+    <Compile Include="Classes\Salary\SalaryDB.cs" />
+    <Compile Include="Classes\Salary\SalaryModel.cs" />
+    <Compile Include="Classes\Service\ServicesDB.cs" />
+    <Compile Include="Classes\Service\Service_Order.cs" />
+    <Compile Include="Classes\Shift\ScheduleModel.cs" />
     <Compile Include="Classes\Shift\ShiftDB.cs" />
+    <Compile Include="Classes\Shift\WeekDate.cs" />
+    <Compile Include="EmployeeControl_Manager\Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeControl_Manager\Attendance.Designer.cs">
+      <DependentUpon>Attendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeControl_Manager\EditUserProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,17 +93,35 @@
     <Compile Include="EmployeeControl_Manager\Employee Manager Form.Designer.cs">
       <DependentUpon>Employee Manager Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeControl_Manager\Print Salary Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeControl_Manager\Print Salary Report.Designer.cs">
+      <DependentUpon>Print Salary Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeControl_Manager\ProfileListForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EmployeeControl_Manager\ProfileListForm.Designer.cs">
       <DependentUpon>ProfileListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeControl_Manager\Salary Calc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeControl_Manager\Salary Calc.Designer.cs">
+      <DependentUpon>Salary Calc.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeControl_Manager\ServiceManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EmployeeControl_Manager\ServiceManagement.Designer.cs">
       <DependentUpon>ServiceManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeControl_Manager\service_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeControl_Manager\service_Order.Designer.cs">
+      <DependentUpon>service_Order.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeControl_Manager\ShiftManagement.cs">
       <SubType>Form</SubType>
@@ -123,23 +155,38 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EmployeeControl_Manager\Attendance.resx">
+      <DependentUpon>Attendance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeControl_Manager\EditUserProfile.resx">
       <DependentUpon>EditUserProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeControl_Manager\Employee Manager Form.resx">
       <DependentUpon>Employee Manager Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeControl_Manager\Print Salary Report.resx">
+      <DependentUpon>Print Salary Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeControl_Manager\ProfileListForm.resx">
       <DependentUpon>ProfileListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeControl_Manager\Salary Calc.resx">
+      <DependentUpon>Salary Calc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeControl_Manager\ServiceManagement.resx">
       <DependentUpon>ServiceManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeControl_Manager\service_Order.resx">
+      <DependentUpon>service_Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeControl_Manager\ShiftManagement.resx">
       <DependentUpon>ShiftManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login Management\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\MainFormEmployee.resx">
+      <DependentUpon>MainFormEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForms\MainFormManager.resx">
       <DependentUpon>MainFormManager.cs</DependentUpon>
@@ -167,5 +214,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

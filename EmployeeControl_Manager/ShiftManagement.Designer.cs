@@ -68,6 +68,7 @@
             this.buttonClearSchedules.Text = "CLEAR ALL SCHEDULES";
             this.buttonClearSchedules.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonClearSchedules.UseVisualStyleBackColor = false;
+            this.buttonClearSchedules.Click += new System.EventHandler(this.buttonClearSchedules_Click);
             // 
             // buttonReload
             // 
@@ -134,6 +135,7 @@
             this.buttonAutoAssign.Text = "ASSIGN AUTOMATICALLY";
             this.buttonAutoAssign.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonAutoAssign.UseVisualStyleBackColor = false;
+            this.buttonAutoAssign.Click += new System.EventHandler(this.buttonAutoAssign_Click);
             // 
             // labelEndTime
             // 
@@ -177,6 +179,7 @@
             this.buttonDeleteShift.Text = "DELETE";
             this.buttonDeleteShift.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonDeleteShift.UseVisualStyleBackColor = false;
+            this.buttonDeleteShift.Click += new System.EventHandler(this.buttonDeleteShift_Click);
             // 
             // buttonUpdateShift
             // 
@@ -194,6 +197,7 @@
             this.buttonUpdateShift.Text = "UPDATE SHIFT";
             this.buttonUpdateShift.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonUpdateShift.UseVisualStyleBackColor = false;
+            this.buttonUpdateShift.Click += new System.EventHandler(this.buttonUpdateShift_Click);
             // 
             // buttonNewShift
             // 
@@ -223,6 +227,7 @@
             this.dataGridViewShift.RowHeadersWidth = 51;
             this.dataGridViewShift.Size = new System.Drawing.Size(1089, 429);
             this.dataGridViewShift.TabIndex = 147;
+            this.dataGridViewShift.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShift_CellContentClick);
             // 
             // label5
             // 

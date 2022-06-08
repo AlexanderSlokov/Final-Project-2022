@@ -42,6 +42,8 @@ namespace Final_Project_2022.Classes
             }
         }
 
+
+
         public EmployeeModel GetEmployeeByID(int id)
         {
             EmployeeModel employee = new EmployeeModel();
@@ -86,7 +88,6 @@ namespace Final_Project_2022.Classes
                 return null;
             }
         }
-
         public EmployeeModel GetEmployeeByUsername(string username)
         {
 
@@ -123,6 +124,8 @@ namespace Final_Project_2022.Classes
                 return null;
             }
         }
+
+
 
         public bool IsEmployeeExistByID(int id)
         {
@@ -171,7 +174,6 @@ namespace Final_Project_2022.Classes
                 return false;
             }
         }
-
         public bool UpdateEmployee(EmployeeModel employee, int oldID, string oldUsername)
         {
 
@@ -286,7 +288,6 @@ namespace Final_Project_2022.Classes
             }
             return false;
         }
-
         public bool AddEmployee(EmployeeModel employee)
         {
             SqlCommand command = new SqlCommand("INSERT INTO employee (id, name, position, birthDate, gender, phoneNum, email, image, salary_per_hour, username, password)"
@@ -387,7 +388,6 @@ namespace Final_Project_2022.Classes
                 return false;
             }
         }
-
         public bool DeleteEmployee(int ID)
         {
             SqlCommand command = new SqlCommand("DELETE FROM employee WHERE id = @id", connection.GetConnection);
@@ -501,6 +501,151 @@ namespace Final_Project_2022.Classes
                 return null;
             }
         }
-        
+
+
+        public Stack<EmployeeModel> GetEmployeesStack()
+        {
+            Stack<EmployeeModel> employeesStack = new Stack<EmployeeModel>();
+            try
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE position = @position ", connection.GetConnection);
+               
+                command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "Employee";
+                
+                connection.openConnection();
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    EmployeeModel employee = new EmployeeModel();
+
+                    employee.Id = Int32.Parse(reader["id"].ToString());
+                    employee.Name = reader["name"].ToString();
+                    employee.Position = reader["position"].ToString();
+                    employee.BirthDate = DateTime.Parse(reader["birthDate"].ToString());
+                    employee.Gender = reader["gender"].ToString();
+                    employee.PhoneNum = reader["phoneNum"].ToString();
+                    employee.Email = reader["email"].ToString();
+                    try
+                    {
+                        MemoryStream stream = new MemoryStream((byte[])reader["image"]);
+                        Image RetImage = Image.FromStream(stream);
+                        employee.Image = RetImage;
+                    }
+                    catch (Exception ex)
+                    {
+                        employee.Image = null;
+                    }
+                    employee.Salary_per_hour = float.Parse(reader["salary_per_hour"].ToString());
+                    employee.Username = reader["username"].ToString();
+                    employee.Password = reader["password"].ToString();
+                    employeesStack.Push(employee);
+                }
+                reader.Close();
+                connection.closeConnection();
+                return employeesStack;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+        public Stack<EmployeeModel> GetManagersStack()
+        {
+            Stack<EmployeeModel> managersStack = new Stack<EmployeeModel>();
+            try
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE position = @position", connection.GetConnection);
+                
+                command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "Manager";
+
+                connection.openConnection();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    EmployeeModel manager = new EmployeeModel();
+
+                    manager.Id = Int32.Parse(reader["id"].ToString());
+                    manager.Name = reader["name"].ToString();
+                    manager.Position = reader["position"].ToString();
+                    manager.BirthDate = DateTime.Parse(reader["birthDate"].ToString());
+                    manager.Gender = reader["gender"].ToString();
+                    manager.PhoneNum = reader["phoneNum"].ToString();
+                    manager.Email = reader["email"].ToString();
+                    try
+                    {
+                        MemoryStream stream = new MemoryStream((byte[])reader["image"]);
+                        Image RetImage = Image.FromStream(stream);
+                        manager.Image = RetImage;
+                    }
+                    catch (Exception ex)
+                    {
+                        manager.Image = null;
+                    }
+                    manager.Salary_per_hour = float.Parse(reader["salary_per_hour"].ToString());
+                    manager.Username = reader["username"].ToString();
+                    manager.Password = reader["password"].ToString();
+                    managersStack.Push(manager);
+                }
+                reader.Close();
+                connection.closeConnection();
+                return managersStack;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+        public Stack<EmployeeModel> GetLaborsStack()
+        {
+            Stack<EmployeeModel> laborsStack = new Stack<EmployeeModel>();
+            try
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE position = @position", connection.GetConnection);
+               
+                command.Parameters.Add("@position", SqlDbType.NVarChar).Value = "Labor";
+
+                connection.openConnection();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    EmployeeModel labor = new EmployeeModel();
+
+                    labor.Id = Int32.Parse(reader["id"].ToString());
+                    labor.Name = reader["name"].ToString();
+                    labor.Position = reader["position"].ToString();
+                    labor.BirthDate = DateTime.Parse(reader["birthDate"].ToString());
+                    labor.Gender = reader["gender"].ToString();
+                    labor.PhoneNum = reader["phoneNum"].ToString();
+                    labor.Email = reader["email"].ToString();
+                    try
+                    {
+                        MemoryStream stream = new MemoryStream((byte[])reader["image"]);
+                        Image RetImage = Image.FromStream(stream);
+                        labor.Image = RetImage;
+                    }
+                    catch (Exception ex)
+                    {
+                        labor.Image = null;
+                    }
+                    labor.Salary_per_hour = float.Parse(reader["salary_per_hour"].ToString());
+                    labor.Username = reader["username"].ToString();
+                    labor.Password = reader["password"].ToString();
+                    laborsStack.Push(labor);
+                }
+                reader.Close();
+                connection.closeConnection();
+                return laborsStack;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
     }
 }

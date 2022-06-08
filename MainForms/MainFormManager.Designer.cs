@@ -34,6 +34,7 @@
             this.EditEmployeeProfilebutton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonServiceOrder = new System.Windows.Forms.Button();
             this.buttonServiceManagement = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -43,8 +44,11 @@
             this.LogOutbutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonSalary = new System.Windows.Forms.Button();
+            this.buttonAttendance = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonprintsalary = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -65,12 +69,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MistyRose;
+            this.panel1.Controls.Add(this.buttonprintsalary);
             this.panel1.Controls.Add(this.ProfileListbutton);
             this.panel1.Controls.Add(this.EditEmployeeProfilebutton);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(12, 202);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 149);
+            this.panel1.Size = new System.Drawing.Size(200, 193);
             this.panel1.TabIndex = 1;
             // 
             // ProfileListbutton
@@ -108,12 +113,25 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Lavender;
+            this.panel3.Controls.Add(this.buttonServiceOrder);
             this.panel3.Controls.Add(this.buttonServiceManagement);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(218, 202);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 149);
+            this.panel3.Size = new System.Drawing.Size(200, 193);
             this.panel3.TabIndex = 3;
+            // 
+            // buttonServiceOrder
+            // 
+            this.buttonServiceOrder.BackColor = System.Drawing.Color.Snow;
+            this.buttonServiceOrder.ForeColor = System.Drawing.Color.Coral;
+            this.buttonServiceOrder.Location = new System.Drawing.Point(3, 93);
+            this.buttonServiceOrder.Name = "buttonServiceOrder";
+            this.buttonServiceOrder.Size = new System.Drawing.Size(194, 48);
+            this.buttonServiceOrder.TabIndex = 11;
+            this.buttonServiceOrder.Text = "Service Order";
+            this.buttonServiceOrder.UseVisualStyleBackColor = false;
+            this.buttonServiceOrder.Click += new System.EventHandler(this.buttonServiceOrder_Click);
             // 
             // buttonServiceManagement
             // 
@@ -144,7 +162,7 @@
             this.panel5.Controls.Add(this.label6);
             this.panel5.Location = new System.Drawing.Point(12, 48);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(830, 109);
+            this.panel5.Size = new System.Drawing.Size(612, 109);
             this.panel5.TabIndex = 4;
             // 
             // buttonEditProfile
@@ -154,10 +172,10 @@
             this.buttonEditProfile.FlatAppearance.BorderSize = 0;
             this.buttonEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditProfile.ForeColor = System.Drawing.Color.Snow;
-            this.buttonEditProfile.Location = new System.Drawing.Point(618, 4);
+            this.buttonEditProfile.Location = new System.Drawing.Point(479, 4);
             this.buttonEditProfile.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditProfile.Name = "buttonEditProfile";
-            this.buttonEditProfile.Size = new System.Drawing.Size(197, 47);
+            this.buttonEditProfile.Size = new System.Drawing.Size(130, 47);
             this.buttonEditProfile.TabIndex = 146;
             this.buttonEditProfile.Text = "EDIT PROFILE";
             this.buttonEditProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -166,7 +184,7 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(479, 4);
+            this.pictureBox.Location = new System.Drawing.Point(353, 6);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(119, 100);
             this.pictureBox.TabIndex = 4;
@@ -183,9 +201,9 @@
             // 
             // LogOutbutton
             // 
-            this.LogOutbutton.Location = new System.Drawing.Point(618, 63);
+            this.LogOutbutton.Location = new System.Drawing.Point(479, 63);
             this.LogOutbutton.Name = "LogOutbutton";
-            this.LogOutbutton.Size = new System.Drawing.Size(197, 41);
+            this.LogOutbutton.Size = new System.Drawing.Size(130, 41);
             this.LogOutbutton.TabIndex = 1;
             this.LogOutbutton.Text = "Log Out";
             this.LogOutbutton.UseVisualStyleBackColor = true;
@@ -203,12 +221,38 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MistyRose;
+            this.panel2.Controls.Add(this.buttonSalary);
+            this.panel2.Controls.Add(this.buttonAttendance);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(424, 202);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 149);
+            this.panel2.Size = new System.Drawing.Size(200, 193);
             this.panel2.TabIndex = 5;
+            // 
+            // buttonSalary
+            // 
+            this.buttonSalary.BackColor = System.Drawing.Color.Snow;
+            this.buttonSalary.ForeColor = System.Drawing.Color.Coral;
+            this.buttonSalary.Location = new System.Drawing.Point(3, 145);
+            this.buttonSalary.Name = "buttonSalary";
+            this.buttonSalary.Size = new System.Drawing.Size(194, 48);
+            this.buttonSalary.TabIndex = 5;
+            this.buttonSalary.Text = "Salary Calculator";
+            this.buttonSalary.UseVisualStyleBackColor = false;
+            this.buttonSalary.Click += new System.EventHandler(this.buttonSalary_Click);
+            // 
+            // buttonAttendance
+            // 
+            this.buttonAttendance.BackColor = System.Drawing.Color.Snow;
+            this.buttonAttendance.ForeColor = System.Drawing.Color.Coral;
+            this.buttonAttendance.Location = new System.Drawing.Point(3, 93);
+            this.buttonAttendance.Name = "buttonAttendance";
+            this.buttonAttendance.Size = new System.Drawing.Size(194, 48);
+            this.buttonAttendance.TabIndex = 4;
+            this.buttonAttendance.Text = "Attendance";
+            this.buttonAttendance.UseVisualStyleBackColor = false;
+            this.buttonAttendance.Click += new System.EventHandler(this.buttonAttendance_Click);
             // 
             // button2
             // 
@@ -231,12 +275,24 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Schedule Management";
             // 
+            // buttonprintsalary
+            // 
+            this.buttonprintsalary.BackColor = System.Drawing.Color.Snow;
+            this.buttonprintsalary.ForeColor = System.Drawing.Color.Coral;
+            this.buttonprintsalary.Location = new System.Drawing.Point(3, 142);
+            this.buttonprintsalary.Name = "buttonprintsalary";
+            this.buttonprintsalary.Size = new System.Drawing.Size(194, 48);
+            this.buttonprintsalary.TabIndex = 7;
+            this.buttonprintsalary.Text = "Print Salary Report";
+            this.buttonprintsalary.UseVisualStyleBackColor = false;
+            this.buttonprintsalary.Click += new System.EventHandler(this.buttonprintsalary_Click);
+            // 
             // MainFormManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
-            this.ClientSize = new System.Drawing.Size(858, 368);
+            this.ClientSize = new System.Drawing.Size(641, 407);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
@@ -278,5 +334,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonServiceOrder;
+        private System.Windows.Forms.Button buttonAttendance;
+        private System.Windows.Forms.Button buttonSalary;
+        private System.Windows.Forms.Button buttonprintsalary;
     }
 }
