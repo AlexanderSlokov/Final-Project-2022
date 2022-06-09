@@ -209,7 +209,7 @@ namespace Final_Project_2022.EmployeeControl_Manager
                 int late_hour = Int32.Parse(textBoxLateCheckIN.Text.ToString()) + Int32.Parse(textBoxSoonCheckOUT.Text.ToString());
                 int salary = Int32.Parse(textBoxTotal.Text.ToString());
 
-                if (salaryDB.IsEmployeeExistByID(collected_employee_ID) == false)
+                if (salaryDB.Is_Employee_SalaryReport_Exist(collected_employee_ID, working_hour, late_hour, salary) == false)
                 {
                     confirm_status = "Confirmed";
                     salaryDB.Add_Employee_SalaryReport(collected_employee_ID, working_hour, late_hour, salary, confirm_status);

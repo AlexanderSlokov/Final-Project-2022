@@ -60,6 +60,36 @@ namespace Final_Project_2022.EmployeeControl_Manager
 
             dataGridViewCourses.Columns["status"].HeaderText = "Confirmation by Managers";
             dataGridViewCourses.Columns["status"].DisplayIndex = 5;
+
+            DateTime daytime = DateTime.Now;
+            labelStartTime.Text = daytime.ToString();
+
+            if ( daytime.Hour == 6 && daytime.Minute == 30 )
+            {            
+                    SqlCommand command = new SqlCommand("DELETE FROM salary_report", database.GetConnection);
+                  
+                    database.openConnection();
+                    try
+                    {
+                        if ((command.ExecuteNonQuery() >= 1))
+                        {                        
+                            MessageBox.Show("Deleted salary report Sucessfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            database.closeConnection();
+                           
+                        }
+                        else
+                        {
+                            // nguoc lai
+                            database.closeConnection();
+                            
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        
+                    }
+            }
         }
 
         private void buttonToPrinter_Click(object sender, EventArgs e)

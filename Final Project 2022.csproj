@@ -188,6 +188,9 @@
     <EmbeddedResource Include="MainForms\MainFormEmployee.resx">
       <DependentUpon>MainFormEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\MainFormLabor.resx">
+      <DependentUpon>MainFormLabor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForms\MainFormManager.resx">
       <DependentUpon>MainFormManager.cs</DependentUpon>
     </EmbeddedResource>

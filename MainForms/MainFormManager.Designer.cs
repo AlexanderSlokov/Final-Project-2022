@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonprintsalary = new System.Windows.Forms.Button();
             this.ProfileListbutton = new System.Windows.Forms.Button();
             this.EditEmployeeProfilebutton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,14 +42,12 @@
             this.buttonEditProfile = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.CurrentAccountLabel = new System.Windows.Forms.Label();
-            this.LogOutbutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonSalary = new System.Windows.Forms.Button();
             this.buttonAttendance = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonprintsalary = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -77,6 +76,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 193);
             this.panel1.TabIndex = 1;
+            // 
+            // buttonprintsalary
+            // 
+            this.buttonprintsalary.BackColor = System.Drawing.Color.Snow;
+            this.buttonprintsalary.ForeColor = System.Drawing.Color.Coral;
+            this.buttonprintsalary.Location = new System.Drawing.Point(3, 142);
+            this.buttonprintsalary.Name = "buttonprintsalary";
+            this.buttonprintsalary.Size = new System.Drawing.Size(194, 48);
+            this.buttonprintsalary.TabIndex = 7;
+            this.buttonprintsalary.Text = "Print Salary Report";
+            this.buttonprintsalary.UseVisualStyleBackColor = false;
+            this.buttonprintsalary.Click += new System.EventHandler(this.buttonprintsalary_Click);
             // 
             // ProfileListbutton
             // 
@@ -158,7 +169,6 @@
             this.panel5.Controls.Add(this.buttonEditProfile);
             this.panel5.Controls.Add(this.pictureBox);
             this.panel5.Controls.Add(this.CurrentAccountLabel);
-            this.panel5.Controls.Add(this.LogOutbutton);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Location = new System.Drawing.Point(12, 48);
             this.panel5.Name = "panel5";
@@ -175,7 +185,7 @@
             this.buttonEditProfile.Location = new System.Drawing.Point(479, 4);
             this.buttonEditProfile.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditProfile.Name = "buttonEditProfile";
-            this.buttonEditProfile.Size = new System.Drawing.Size(130, 47);
+            this.buttonEditProfile.Size = new System.Drawing.Size(130, 101);
             this.buttonEditProfile.TabIndex = 146;
             this.buttonEditProfile.Text = "EDIT PROFILE";
             this.buttonEditProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -199,24 +209,15 @@
             this.CurrentAccountLabel.TabIndex = 3;
             this.CurrentAccountLabel.Text = "CURRENT ACCOUNT LABEL";
             // 
-            // LogOutbutton
-            // 
-            this.LogOutbutton.Location = new System.Drawing.Point(479, 63);
-            this.LogOutbutton.Name = "LogOutbutton";
-            this.LogOutbutton.Size = new System.Drawing.Size(130, 41);
-            this.LogOutbutton.TabIndex = 1;
-            this.LogOutbutton.Text = "Log Out";
-            this.LogOutbutton.UseVisualStyleBackColor = true;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(13, 14);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(141, 20);
+            this.label6.Size = new System.Drawing.Size(145, 20);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Current Account :";
+            this.label6.Text = "Current Manager :";
             // 
             // panel2
             // 
@@ -275,18 +276,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Schedule Management";
             // 
-            // buttonprintsalary
-            // 
-            this.buttonprintsalary.BackColor = System.Drawing.Color.Snow;
-            this.buttonprintsalary.ForeColor = System.Drawing.Color.Coral;
-            this.buttonprintsalary.Location = new System.Drawing.Point(3, 142);
-            this.buttonprintsalary.Name = "buttonprintsalary";
-            this.buttonprintsalary.Size = new System.Drawing.Size(194, 48);
-            this.buttonprintsalary.TabIndex = 7;
-            this.buttonprintsalary.Text = "Print Salary Report";
-            this.buttonprintsalary.UseVisualStyleBackColor = false;
-            this.buttonprintsalary.Click += new System.EventHandler(this.buttonprintsalary_Click);
-            // 
             // MainFormManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -323,7 +312,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button LogOutbutton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button EditEmployeeProfilebutton;
         private System.Windows.Forms.Button buttonServiceManagement;

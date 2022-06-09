@@ -29,15 +29,18 @@ namespace Final_Project_2022.Classes.Salary
             return dataTable;
         }
 
-        public bool IsEmployeeExistByID(int id)
+        public bool Is_Employee_SalaryReport_Exist(int id, int working, int late, int salary)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
 
             DataTable table = new DataTable();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM salary_report WHERE report_id = @id", DbOperating.GetConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM salary_report WHERE employee_id = @id AND working_hours = @work AND late_hours = @late AND salary = @salary ", DbOperating.GetConnection);
          
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            command.Parameters.Add("@work", SqlDbType.Int).Value = working;
+            command.Parameters.Add("@late", SqlDbType.Int).Value = late;
+            command.Parameters.Add("@salary", SqlDbType.Int).Value = salary;
             DbOperating.openConnection();
             adapter.SelectCommand = command;
             adapter.Fill(table);
